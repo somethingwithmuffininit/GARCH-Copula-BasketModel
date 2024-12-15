@@ -1,0 +1,19 @@
+remove tdf normdf skewnorm df from dict = {}
+residuals_dict = {}
+
+fitted_models = {}
+distributions = ("normal","t","skewt")
+
+#norm_df,t_df,skewt_df = pd.DataFrame(),pd.DataFrame(),pd.DataFrame()
+
+#Fit each GARCH model, store results in fitted_models dictionary
+for dist in distributions:
+    for ticker in tickers:
+        # as suggested by the documentation, we scale our data to improve numerical stability
+        model = arch_model(merged_data[ticker]*100, vol="EGarch", p=3, q=3, dist=dist, rescale=False)  
+        fitted_models[(ticker,dist)] = model.fit(options={'maxiter': 1000, 'ftol': 1e-8},disp="off")
+
+
+#Creates a dataframe with the fitted parameters from each model, and prints results
+print("Fitted parameters for each model:\n")
+for dist in distributions:
