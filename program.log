@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.9.26)  16 DEC 2024 18:08
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2024.9.26)  17 DEC 2024 00:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -912,7 +912,7 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 Package hyperref Info: Option `breaklinks' set `true' on input line 383.
 Package hyperref Info: Option `colorlinks' set `true' on input line 383.
 
-No file program.aux.
+(program.aux)
 \openout1 = `program.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 390.
@@ -939,6 +939,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
+
 (C:\Users\liamm\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
@@ -1185,11 +1186,9 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
 t line 390.
 Package hyperref Info: Link coloring ON on input line 390.
+(program.out) (program.out)
 \@outlinefile=\write5
 \openout5 = `program.out'.
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
 (Font)              scaled to size 12.00128pt on input line 392.
@@ -1205,6 +1204,7 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 5.99936pt on input line 392.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 392
 .
+
 (C:\Users\liamm\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -1220,73 +1220,33 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 39
 (C:\Users\liamm\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-
-LaTeX Warning: No \author given.
-
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 399.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 399.
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 401.
-[1
-
-] [2]
+(Font)              scaled to size 10.95116pt on input line 403.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 511.
+(Font)              scaled to size 7.6658pt on input line 403.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.6658pt on input line 511.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.47559pt on input line 511.
+(Font)              scaled to size 5.47559pt on input line 403.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 511.
+(Font)              scaled to size 10.94882pt on input line 403.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.66417pt on input line 511.
+(Font)              scaled to size 7.66417pt on input line 403.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.47441pt on input line 511.
+(Font)              scaled to size 5.47441pt on input line 403.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.475> not available
-(Font)              size <5> substituted on input line 511.
+(Font)              size <5> substituted on input line 403.
 
+[1
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 522.
-
-[3]
-
-LaTeX Warning: Hyper reference `fit-garch-models' on page 4 undefined on input 
-line 574.
-
-
-LaTeX Warning: Hyper reference `references' on page 4 undefined on input line 5
-89.
-
+]
 Missing character: There is no 𝜆 in font [lmroman10-regular]:mapping=tex-text;!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.599 4\lambda c \left
-                      ( \frac{\eta - 2}{\eta - 1} \right)\$,
-? ＀＀
-Type <return> to proceed, S to scroll future error messages,
-R to run without stopping, Q to run quietly,
-I to insert something, E to edit your file,
-1 or ... or 9 to ignore the next 1 to 9 tokens of input,
-H for help, X to quit.
+l.493 \lambda c \left
+                     ( \frac{\eta - 2}{\eta - 1} \right) \$,
 ? 
-! Interruption.
-<to be read again> 
-                   \left 
-l.599 4\lambda c \left
-                      ( \frac{\eta - 2}{\eta - 1} \right)\$,
-? <return>
-Type <return> to proceed, S to scroll future error messages,
-R to run without stopping, Q to run quietly,
-I to insert something, E to edit your file,
-H for help, X to quit.
-? return
-OK, entering \nonstopmode...
 
 ! LaTeX Error: Bad math environment delimiter.
 
@@ -1294,189 +1254,88 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.600 \(
-        b^2 = 1 + 3A \lambda^2 - a^2\),
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+l.494 \(
+        b^2 = 1 + 3A \lambda ^2 - a^2\),
+? 
+[2]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line 524.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 524.
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 525.
+ [3] [4] [5] [6] [7]
+File: program_files/program_23_0.png Graphic file (type bmp)
+<program_files/program_23_0.png>
 
-
-LaTeX Warning: Hyper reference `references' on page 4 undefined on input line 6
-05.
-
-
-LaTeX Warning: Hyper reference `references' on page 4 undefined on input line 6
-12.
-
-
-LaTeX Warning: Hyper reference `references' on page 4 undefined on input line 6
-13.
-
-
-LaTeX Warning: Hyper reference `references' on page 4 undefined on input line 6
-14.
-
-
-LaTeX Warning: Hyper reference `references' on page 4 undefined on input line 6
-15.
-
-
-LaTeX Warning: Hyper reference `references' on page 4 undefined on input line 6
-17.
-
-
-LaTeX Warning: Hyper reference `references' on page 4 undefined on input line 6
-19.
-
-
-LaTeX Warning: Hyper reference `references' on page 4 undefined on input line 6
-21.
-
-[4] [5] [6] [7] [8] [9] [10]
-File: program_files/program_24_0.png Graphic file (type bmp)
-<program_files/program_24_0.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 973--974
+Underfull \hbox (badness 10000) in paragraph at lines 852--853
 
  []
 
-File: program_files/program_24_1.png Graphic file (type bmp)
-<program_files/program_24_1.png>
+[8]
+File: program_files/program_26_0.png Graphic file (type bmp)
+<program_files/program_26_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 978--979
-
- []
-
-File: program_files/program_24_2.png Graphic file (type bmp)
-<program_files/program_24_2.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 983--984
+Underfull \hbox (badness 10000) in paragraph at lines 878--879
 
  []
 
-[11]
-File: program_files/program_27_0.png Graphic file (type bmp)
-<program_files/program_27_0.png>
+[9]
+File: program_files/program_29_0.png Graphic file (type bmp)
+<program_files/program_29_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
-
- []
-
-File: program_files/program_27_1.png Graphic file (type bmp)
-<program_files/program_27_1.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1013--1014
+Underfull \hbox (badness 10000) in paragraph at lines 919--920
 
  []
 
-File: program_files/program_27_2.png Graphic file (type bmp)
-<program_files/program_27_2.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1019
-
- []
-
-[12]
-File: program_files/program_30_1.png Graphic file (type bmp)
-<program_files/program_30_1.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1072--1073
+[10] [11] [12]
+File: program_files/program_39_0.png Graphic file (type bmp)
+<program_files/program_39_0.png>
+ [13]
+Underfull \hbox (badness 10000) in paragraph at lines 1127--1128
 
  []
 
-File: program_files/program_30_3.png Graphic file (type bmp)
-<program_files/program_30_3.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1081--1082
-
- []
-
-File: program_files/program_30_5.png Graphic file (type bmp)
-<program_files/program_30_5.png>
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 1090--1091
+[14]
+File: program_files/program_43_4.png Graphic file (type bmp)
+<program_files/program_43_4.png>
+ [15]
+Underfull \hbox (badness 10000) in paragraph at lines 1219--1220
 
  []
 
-[14] [15] [16] [17]
-File: program_files/program_40_1.png Graphic file (type bmp)
-<program_files/program_40_1.png>
+[16]
+File: program_files/program_45_2.png Graphic file (type bmp)
+<program_files/program_45_2.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1330--1331
-
- []
-
-File: program_files/program_40_3.png Graphic file (type bmp)
-<program_files/program_40_3.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1339--1340
+Underfull \hbox (badness 10000) in paragraph at lines 1274--1275
 
  []
 
-File: program_files/program_40_5.png Graphic file (type bmp)
-<program_files/program_40_5.png>
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 1348--1349
+File: program_files/program_45_3.png Graphic file (type bmp)
+<program_files/program_45_3.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1279--1280
 
  []
 
-[19]
-File: program_files/program_42_1.png Graphic file (type bmp)
-<program_files/program_42_1.png>
+[17] [18]
+File: program_files/program_47_1.png Graphic file (type bmp)
+<program_files/program_47_1.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1441--1442
-
- []
-
-[20]
-File: program_files/program_44_1.png Graphic file (type bmp)
-<program_files/program_44_1.png>
- [21]
-Underfull \hbox (badness 10000) in paragraph at lines 1491--1492
+Underfull \hbox (badness 10000) in paragraph at lines 1352--1353
 
  []
 
-File: program_files/program_44_2.png Graphic file (type bmp)
-<program_files/program_44_2.png>
+[19] [20]
+File: program_files/program_52_0.png Graphic file (type bmp)
+<program_files/program_52_0.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1496--1497
-
- []
-
-[22]
-File: program_files/program_46_1.png Graphic file (type bmp)
-<program_files/program_46_1.png>
- [23]
-Underfull \hbox (badness 10000) in paragraph at lines 1565--1566
+Underfull \hbox (badness 10000) in paragraph at lines 1431--1432
 
  []
 
-File: program_files/program_46_3.png Graphic file (type bmp)
-<program_files/program_46_3.png>
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 1579--1580
-
- []
-
-File: program_files/program_46_5.png Graphic file (type bmp)
-<program_files/program_46_5.png>
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 1594--1595
-
- []
-
-[26] [27]
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 1698.
-
-
-Overfull \hbox (3.67906pt too wide) in paragraph at lines 1713--1715
-[]\TU/lmr/m/n/10.95 arch https://arch.readthedocs.io/en/latest/univariate/gener
-ated/arch.univariate.SkewStudent.html 
- []
-
-[28] (program.aux)
+[21] [22] [23] (program.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1486,28 +1345,16 @@ L3 programming layer <2024-01-04>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.475pt have occurred.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `program.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `program.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  BF7AB472BC6562F0964E0A86AC88694B;1741.
+Package rerunfilecheck Info: File `program.out' has not changed.
+(rerunfilecheck)             Checksum: DB76E2188DBA84C0392A3ED708CE4C6C;4546.
  ) 
 Here is how much of TeX's memory you used:
- 30863 strings out of 409617
- 597265 string characters out of 5774013
- 2034191 words of memory out of 5000000
- 52492 multiletter control sequences out of 15000+600000
+ 30803 strings out of 409617
+ 594815 string characters out of 5774013
+ 2042191 words of memory out of 5000000
+ 52435 multiletter control sequences out of 15000+600000
  566391 words of font info for 103 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 101i,9n,114p,1193b,636s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,9n,114p,734b,636s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on program.pdf (28 pages).
+Output written on program.pdf (23 pages).

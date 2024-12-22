@@ -167,8 +167,8 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{program}
-    
+    \title{Pricing Index Basket Options- A Copula Based Approach}
+    \author{Liam McKelvey}
     
     
     
@@ -394,114 +394,6 @@
     
 
     
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{352}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{}\PYZpc{}pip install yfinance numpy statsmodels pandas matplotlib arch openpyxl}
-\PY{o}{\PYZpc{}}\PY{k}{pip} install nbconvert
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-Collecting nbconvert
-  Downloading nbconvert-7.16.4-py3-none-any.whl.metadata (8.5 kB)
-Requirement already satisfied: beautifulsoup4 in c:\textbackslash{}programming\textbackslash{}risk-management-
-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from nbconvert) (4.12.3)
-Collecting bleach!=5.0.0 (from nbconvert)
-  Downloading bleach-6.2.0-py3-none-any.whl.metadata (30 kB)
-Collecting defusedxml (from nbconvert)
-  Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
-Collecting jinja2>=3.0 (from nbconvert)
-  Downloading jinja2-3.1.4-py3-none-any.whl.metadata (2.6 kB)
-Requirement already satisfied: jupyter-core>=4.7 in c:\textbackslash{}programming\textbackslash{}risk-
-management-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from nbconvert) (5.7.2)
-Collecting jupyterlab-pygments (from nbconvert)
-  Downloading jupyterlab\_pygments-0.3.0-py3-none-any.whl.metadata (4.4 kB)
-Collecting markupsafe>=2.0 (from nbconvert)
-  Downloading MarkupSafe-3.0.2-cp313-cp313-win\_amd64.whl.metadata (4.1 kB)
-Collecting mistune<4,>=2.0.3 (from nbconvert)
-  Downloading mistune-3.0.2-py3-none-any.whl.metadata (1.7 kB)
-Collecting nbclient>=0.5.0 (from nbconvert)
-  Downloading nbclient-0.10.1-py3-none-any.whl.metadata (8.2 kB)
-Collecting nbformat>=5.7 (from nbconvert)
-  Downloading nbformat-5.10.4-py3-none-any.whl.metadata (3.6 kB)
-Requirement already satisfied: packaging in c:\textbackslash{}programming\textbackslash{}risk-management-
-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from nbconvert) (24.2)
-Collecting pandocfilters>=1.4.1 (from nbconvert)
-  Downloading pandocfilters-1.5.1-py2.py3-none-any.whl.metadata (9.0 kB)
-Requirement already satisfied: pygments>=2.4.1 in c:\textbackslash{}programming\textbackslash{}risk-
-management-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from nbconvert) (2.18.0)
-Collecting tinycss2 (from nbconvert)
-  Downloading tinycss2-1.4.0-py3-none-any.whl.metadata (3.0 kB)
-Requirement already satisfied: traitlets>=5.1 in c:\textbackslash{}programming\textbackslash{}risk-management-
-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from nbconvert) (5.14.3)
-Requirement already satisfied: webencodings in c:\textbackslash{}programming\textbackslash{}risk-management-
-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from bleach!=5.0.0->nbconvert) (0.5.1)
-Requirement already satisfied: platformdirs>=2.5 in c:\textbackslash{}programming\textbackslash{}risk-
-management-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from jupyter-core>=4.7->nbconvert)
-(4.3.6)
-Requirement already satisfied: pywin32>=300 in c:\textbackslash{}programming\textbackslash{}risk-management-
-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from jupyter-core>=4.7->nbconvert) (308)
-Requirement already satisfied: jupyter-client>=6.1.12 in c:\textbackslash{}programming\textbackslash{}risk-
-management-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from nbclient>=0.5.0->nbconvert)
-(8.6.3)
-Collecting fastjsonschema>=2.15 (from nbformat>=5.7->nbconvert)
-  Downloading fastjsonschema-2.21.1-py3-none-any.whl.metadata (2.2 kB)
-Collecting jsonschema>=2.6 (from nbformat>=5.7->nbconvert)
-  Downloading jsonschema-4.23.0-py3-none-any.whl.metadata (7.9 kB)
-Requirement already satisfied: soupsieve>1.2 in c:\textbackslash{}programming\textbackslash{}risk-management-
-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from beautifulsoup4->nbconvert) (2.6)
-Collecting attrs>=22.2.0 (from jsonschema>=2.6->nbformat>=5.7->nbconvert)
-  Downloading attrs-24.3.0-py3-none-any.whl.metadata (11 kB)
-Collecting jsonschema-specifications>=2023.03.6 (from
-jsonschema>=2.6->nbformat>=5.7->nbconvert)
-  Downloading jsonschema\_specifications-2024.10.1-py3-none-any.whl.metadata (3.0
-kB)
-Collecting referencing>=0.28.4 (from jsonschema>=2.6->nbformat>=5.7->nbconvert)
-  Downloading referencing-0.35.1-py3-none-any.whl.metadata (2.8 kB)
-Collecting rpds-py>=0.7.1 (from jsonschema>=2.6->nbformat>=5.7->nbconvert)
-  Downloading rpds\_py-0.22.3-cp313-cp313-win\_amd64.whl.metadata (4.2 kB)
-Requirement already satisfied: python-dateutil>=2.8.2 in c:\textbackslash{}programming\textbackslash{}risk-
-management-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from jupyter-
-client>=6.1.12->nbclient>=0.5.0->nbconvert) (2.9.0.post0)
-Requirement already satisfied: pyzmq>=23.0 in c:\textbackslash{}programming\textbackslash{}risk-management-
-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from jupyter-
-client>=6.1.12->nbclient>=0.5.0->nbconvert) (26.2.0)
-Requirement already satisfied: tornado>=6.2 in c:\textbackslash{}programming\textbackslash{}risk-management-
-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from jupyter-
-client>=6.1.12->nbclient>=0.5.0->nbconvert) (6.4.2)
-Requirement already satisfied: six>=1.5 in c:\textbackslash{}programming\textbackslash{}risk-management-
-project\textbackslash{}.venv\textbackslash{}lib\textbackslash{}site-packages (from python-dateutil>=2.8.2->jupyter-
-client>=6.1.12->nbclient>=0.5.0->nbconvert) (1.16.0)
-Downloading nbconvert-7.16.4-py3-none-any.whl (257 kB)
-Downloading bleach-6.2.0-py3-none-any.whl (163 kB)
-Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
-Downloading MarkupSafe-3.0.2-cp313-cp313-win\_amd64.whl (15 kB)
-Downloading mistune-3.0.2-py3-none-any.whl (47 kB)
-Downloading nbclient-0.10.1-py3-none-any.whl (25 kB)
-Downloading nbformat-5.10.4-py3-none-any.whl (78 kB)
-Downloading pandocfilters-1.5.1-py2.py3-none-any.whl (8.7 kB)
-Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
-Downloading jupyterlab\_pygments-0.3.0-py3-none-any.whl (15 kB)
-Downloading tinycss2-1.4.0-py3-none-any.whl (26 kB)
-Downloading fastjsonschema-2.21.1-py3-none-any.whl (23 kB)
-Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
-Downloading attrs-24.3.0-py3-none-any.whl (63 kB)
-Downloading jsonschema\_specifications-2024.10.1-py3-none-any.whl (18 kB)
-Downloading referencing-0.35.1-py3-none-any.whl (26 kB)
-Downloading rpds\_py-0.22.3-cp313-cp313-win\_amd64.whl (235 kB)
-Installing collected packages: fastjsonschema, tinycss2, rpds-py, pandocfilters,
-mistune, markupsafe, jupyterlab-pygments, defusedxml, bleach, attrs,
-referencing, jinja2, jsonschema-specifications, jsonschema, nbformat, nbclient,
-nbconvert
-Successfully installed attrs-24.3.0 bleach-6.2.0 defusedxml-0.7.1
-fastjsonschema-2.21.1 jinja2-3.1.4 jsonschema-4.23.0 jsonschema-
-specifications-2024.10.1 jupyterlab-pygments-0.3.0 markupsafe-3.0.2
-mistune-3.0.2 nbclient-0.10.1 nbconvert-7.16.4 nbformat-5.10.4
-pandocfilters-1.5.1 referencing-0.35.1 rpds-py-0.22.3 tinycss2-1.4.0
-Note: you may need to restart the kernel to use updated packages.
-    \end{Verbatim}
-
     \section{Introduction}\label{introduction}
 
 In this paper we will be pricing index basket options, using a
@@ -513,31 +405,31 @@ strikes \(k\), with a time to maturity of one month.
 
 To do this, we will first fit several GARCH based volatility forecasts
 to each index, assuming normal, Student's-t, and skewed Student's-t
-residuals. Then, we will fit a multivariate-t distribution to our data.
-Goodness of fit tests will be conducted for each model. For each assumed
-residual distribution, we will use Monte Carlo methods to forecast the
-payoff of our basket option. We will conclude by simulating the
-performance of the covered call strategy, and backtesting our results.
+residuals. Then, we will fit a multivariate-t distribution to our data,
+apply the probability transform to our residuals, and fit a Student's-t
+copula to the result. Goodness of fit tests will be conducted for each
+model. For each assumed residual distribution, we will use Monte Carlo
+methods to forecast the payoff of our basket option. We will conclude by
+simulating the performance of the covered call strategy, and backtesting
+our results.
 
-    \subsubsection{Background Concepts}\label{background-concepts}
+    \subsection{Background Concepts}\label{background-concepts}
 
     We assume that the reader has a basic understanding of time-series
-models, model fitting, and options{[}1{]}. First, let us define our
-time-series models.
+models, model fitting, and options. First, let us define our time-series
+models.
 
-\subparagraph{ARCH Model}\label{arch-model}
+\subsubsection{ARCH Model}\label{arch-model}
 
 Let us do a brief overview of the Autoregressive Conditional
-Heteroskedasticity (ARCH) model.
-
-Let \(\{y_t\}\) be a time-series. Let \(\{\epsilon_t\}\) denote the
-error terms (known as residuals, with respect to a mean process). We
-will assume for each time-series that the mean process is constant. We
-assume that \(\epsilon _t = \sigma_t z_t\), where \(\sigma_t\) repsents
-the time-dependent volatility/standard deviation, and \(z_t\) is a white
-noise process (a stochastic process with mean 0, constant volatility,
-and no autocorrelation). We will assume that our white noise processes
-have a constantly volatility of 1.
+Heteroskedasticity (ARCH) model. Let \(\{y_t\}\) be a time-series. Let
+\(\{\epsilon_t\}\) denote the error terms (known as residuals, with
+respect to a mean process). We will assume for each time-series that the
+mean process is constant. We assume that \(\epsilon _t = \sigma_t z_t\),
+where \(\sigma_t\) repsents the time-dependent volatility/standard
+deviation, and \(z_t\) is a white noise process (a stochastic process
+with mean 0, constant volatility, and no autocorrelation). We will
+assume that our white noise processes have a constantly volatility of 1.
 
 We forecast conditional volatility as:
 \[\sigma^2_t = \alpha_0 + \sum_{i=1}^{q} {\alpha_i \epsilon^2_{t-i}}\]
@@ -548,7 +440,7 @@ of the ARCH process (i.e.~the number of previous residuals to consider).
 The main feature of this model is that it is able to capture volatility
 clustering in the data, by considering past ``shocks'' or errors.
 
-\subparagraph{GARCH Model}\label{garch-model}
+\subsubsection{GARCH Model}\label{garch-model}
 
 The above can be generalized, by also including an moving average of the
 previous volatilities. This results in a Generalized Autoregressive
@@ -557,11 +449,11 @@ Conditional Heteroskedasticity (GARCH) model.
 We forecast conditional volatility as:
 \[\sigma^2_t = \omega + \sum_{i=1}^{q} {\alpha_i \epsilon^2_{t-i}}+\sum_{i=1}^{p} {\beta_i \sigma^2_{t-i}} \]
 for some \(\omega > 0, \alpha_i \geq 0, \beta_i \geq 0\) where q
-represents the order of the ARCH process, and p repsents the order of
+represents the order of the ARCH process, and p represents the order of
 the GARCH process (i.e.~the number of previous volatilities to
 consider).
 
-This model has the added capability of capturing the persistance of
+This model has the added capability of capturing the persistence of
 previous volatility.
 
 For an intuitive understanding of the parameters, consider the yield of
@@ -573,20 +465,22 @@ volatility increases, it tends to be persistant, yielding high values of
 \(\beta_i\). For empirical justification of this situation, see the
 fitted parameters \hyperref[fit-garch-models]{here}.
 
-\subparagraph{Noise Processes}\label{noise-processes}
+\paragraph{Noise Processes}\label{noise-processes}
 
-We will assume that our noise process follows one of the following: 1. A
-Standard Normal distribution \(N(0,1)\) 2. A Standard Student's-t
-distribution with a fitted degrees of freedom \(t_\nu (0,1)\) 3. A
-Skewed Student's-t distribution with fitted degrees of freedom and skew
-parameter
-
+We will assume that our noise process follows one of the following:\\
+1. A Standard Normal distribution \(N(0,1)\),\\
+2. A Standard Student's-t distribution with a fitted degrees of freedom
+\(t_\nu (0,1)\),\\
+3. A Skewed Student's-t distribution with fitted degrees of freedom and
+skew parameter\\
 We assume that the reader is familiar with the first two distributions,
-and thus we will only highlight the latter distribution. \#\#\#\#\#
-Skewed Student's-t distribution
+and thus we will only highlight the latter distribution.
+
+\paragraph{Skewed Student's-t
+distribution}\label{skewed-students-t-distribution}
 
 We use the density function given by Hansen in
-\hyperref[references]{[1]}, and refer the reader there for a more
+\hyperref[references]{[4]}, and refer the reader there for a more
 indepth analysis:
 
 \[g(z|\eta, \lambda) =
@@ -595,116 +489,78 @@ indepth analysis:
     bc \left(1 + \frac{1}{\eta - 2} \right) \left( \frac{bz + a}{1 + \lambda} \right)^{-(\eta + 1)/2} & \text{if } z \geq -a/b,
 \end{cases}\]
 
-where \(2 < \eta < \infty\) and \(-1 < \lambda < 1\), and \$ a =
-4\lambda c \left( \frac{\eta - 2}{\eta - 1} \right)\$,
-\(b^2 = 1 + 3A \lambda^2 - a^2\),
+where \(2 < \eta < \infty\) and \(-1 < \lambda < 1\), and \$ a = 4
+\lambda c \left( \frac{\eta - 2}{\eta - 1} \right) \$,
+\(b^2 = 1 + 3A \lambda ^2 - a^2\),
 \(c = \frac{\Gamma\left( \frac{\eta + 1}{2} \right)}{\sqrt{\pi (\eta - 2)}} \left( \frac{\eta}{2} \right)\)
 
 The idea behind this distribution is to generalize the Student's-t
 distribution, to allow for skewness. Fortunately, the arch library, from
-\hyperref[references]{[5]}, allows us to easily sample from this skewed
+\hyperref[references]{[9]}, allows us to easily sample from this skewed
 Student's-t distribution.
 
     \subsection{Preliminary Work}\label{preliminary-work}
 
-    \paragraph{Import Libraries}\label{import-libraries}
+    \subsubsection{Import Libraries}\label{import-libraries}
 
-We will use: 1. The yfinance library from \hyperref[references]{[2]} to
-download our data, 2. numpy from \hyperref[references]{[3]} and pandas
-from \hyperref[references]{[4]} for data structures, 3. the arch library
-from \hyperref[references]{[5]} for fitting GARCH models, and conducting
-Goodness of Fit tests 4. the scipy library from
-\hyperref[references]{[6]} for fitting multivariate models, conducting
-simulations, and conducting Goodness of Fit tests 5. the statsmodels
-library from \hyperref[references]{[7]} for graphing autocorrelation
-functions and fitting t-copulas 6. the matplotlib library from
-\hyperref[references]{[8]} for data visualization
+We will use:\\
+1. The yfinance library from \hyperref[references]{[1]} to download our
+data,\\
+2. the tabulate library from \hyperref[references]{[2]} for printing,\\
+3. the numpy library from \hyperref[references]{[5]},\\
+4. the matplotlib library from \hyperref[references]{[6]} for data
+visualization,\\
+5. the pandas library from \hyperref[references]{[7]} for data
+structures, 6. the statsmodels library from \hyperref[references]{[8]}
+for graphing autocorrelation functions and fitting t-copulas,\\
+7. the arch library from \hyperref[references]{[9]} for fitting GARCH
+models, and conducting goodness of fit tests,\\
+8. the scipy library from \hyperref[references]{[10]} for fitting
+multivariate models, conducting simulations, goodness of fit and
+hypothesis testing
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{308}{\boxspacing}
+\prompt{In}{incolor}{1}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{import} \PY{n+nn}{yfinance} \PY{k}{as} \PY{n+nn}{yf}
-\PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+\PY{k+kn}{import} \PY{n+nn}{tabulate} \PY{k}{as} \PY{n+nn}{tab}
 \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-\PY{k+kn}{from} \PY{n+nn}{arch} \PY{k+kn}{import} \PY{n}{arch\PYZus{}model}
-\PY{k+kn}{from} \PY{n+nn}{arch}\PY{n+nn}{.}\PY{n+nn}{univariate} \PY{k+kn}{import} \PY{n}{SkewStudent}
-\PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{stats} \PY{k+kn}{import} \PY{n}{norm}\PY{p}{,} \PY{n}{t}\PY{p}{,} \PY{n}{multivariate\PYZus{}t}\PY{p}{,} \PY{n}{chi2}\PY{p}{,} \PY{n}{f}
-\PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{optimize} \PY{k+kn}{import} \PY{n}{minimize}
+\PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+\PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
 \PY{k+kn}{from} \PY{n+nn}{statsmodels}\PY{n+nn}{.}\PY{n+nn}{distributions}\PY{n+nn}{.}\PY{n+nn}{copula}\PY{n+nn}{.}\PY{n+nn}{api} \PY{k+kn}{import} \PY{n}{StudentTCopula}
 \PY{k+kn}{from} \PY{n+nn}{statsmodels}\PY{n+nn}{.}\PY{n+nn}{graphics}\PY{n+nn}{.}\PY{n+nn}{tsaplots} \PY{k+kn}{import} \PY{n}{plot\PYZus{}acf}
-\PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+\PY{k+kn}{from} \PY{n+nn}{arch} \PY{k+kn}{import} \PY{n}{arch\PYZus{}model}
+\PY{k+kn}{from} \PY{n+nn}{arch}\PY{n+nn}{.}\PY{n+nn}{univariate} \PY{k+kn}{import} \PY{n}{SkewStudent}
+\PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{stats} \PY{k+kn}{import} \PY{n}{norm}\PY{p}{,} \PY{n}{t}
+\PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{optimize} \PY{k+kn}{import} \PY{n}{minimize}
+\PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{stats} \PY{k+kn}{import} \PY{n}{ttest\PYZus{}ind}
 \end{Verbatim}
 \end{tcolorbox}
 
-    \paragraph{Import Data}\label{import-data}
+    \subsubsection{Import Data}\label{import-data}
 
 This cell imports index data from Yahoo Finance, using the yFinance
-library, or alternatively, loads previously cached data.
+library
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{309}{\boxspacing}
+\prompt{In}{incolor}{19}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} List of ticker symbols for each index}
-\PY{n}{all\PYZus{}tickers} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}GDAXI}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}AEX}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}FTSE}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}N225}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}GSPC}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}GSPTSE}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}TYX}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}  \PY{c+c1}{\PYZsh{} DAX, AEX, FTSE 100, Nikkei 225, S\PYZam{}P 500, S\PYZam{}P/TSX Composite}
+\PY{n}{all\PYZus{}tickers} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}GDAXI}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}AEX}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}FTSE}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}N225}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}GSPC}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}GSPTSE}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}TYX}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}   \PY{c+c1}{\PYZsh{} DAX, AEX, FTSE 100, Nikkei 225, S\PYZam{}P 500, S\PYZam{}P/TSX Composite, US Treasury Yield}
 \PY{n}{index\PYZus{}datasets} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
-
-\PY{c+c1}{\PYZsh{}Set to True to download data from Yahoo Finance using the yFinance library}
-\PY{c+c1}{\PYZsh{}Set to False to use previously cached data}
-\PY{n}{DOWNLOAD\PYZus{}DATA} \PY{o}{=} \PY{k+kc}{False}
-
-
-\PY{k}{if} \PY{n}{DOWNLOAD\PYZus{}DATA}\PY{p}{:}
-    \PY{c+c1}{\PYZsh{} Loop over each ticker symbol to fetch the data}
-    \PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{all\PYZus{}tickers}\PY{p}{:}
-        \PY{c+c1}{\PYZsh{} Retrieve the historical data starting from November 20, 1992}
-        \PY{n}{index} \PY{o}{=} \PY{n}{yf}\PY{o}{.}\PY{n}{Ticker}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}
-        \PY{c+c1}{\PYZsh{}Save to dictionary}
-        \PY{n}{index\PYZus{}datasets}\PY{p}{[}\PY{n}{ticker}\PY{p}{]} \PY{o}{=} \PY{n}{index}\PY{o}{.}\PY{n}{history}\PY{p}{(}\PY{n}{start}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{1992\PYZhy{}11\PYZhy{}20}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}   \PY{c+c1}{\PYZsh{}(start=\PYZdq{}1992\PYZhy{}11\PYZhy{}20\PYZdq{})}
-
-        \PY{c+c1}{\PYZsh{} Convert the Date column to Datetime}
-        \PY{p}{(}\PY{n}{index\PYZus{}datasets}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{index} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{to\PYZus{}datetime}\PY{p}{(}\PY{p}{(}\PY{n}{index\PYZus{}datasets}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{index}\PY{o}{.}\PY{n}{normalize}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{tz\PYZus{}localize}\PY{p}{(}\PY{k+kc}{None}\PY{p}{)}\PY{p}{)}
-        
-        \PY{n}{index\PYZus{}datasets}\PY{p}{[}\PY{n}{ticker}\PY{p}{]} \PY{o}{=} \PY{n+nb}{round}\PY{p}{(}\PY{n}{index\PYZus{}datasets}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{,}\PY{l+m+mi}{12}\PY{p}{)}
-
-        \PY{c+c1}{\PYZsh{}Write data to disk}
-        \PY{n}{index\PYZus{}datasets}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{o}{.}\PY{n}{to\PYZus{}excel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{.}\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s+s2}{Saved Data}\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n}{ticker}\PY{o}{+}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.xlsx}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{index}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
-\PY{k}{else}\PY{p}{:}
-    \PY{k+kn}{import} \PY{n+nn}{os}
-    \PY{c+c1}{\PYZsh{} Loop over each ticker symbol}
-    \PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{all\PYZus{}tickers}\PY{p}{:}
-        \PY{c+c1}{\PYZsh{} File path to saved data}
-        \PY{n}{file\PYZus{}path} \PY{o}{=} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{.}\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s+s2}{Saved Data}\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n}{ticker}\PY{o}{+}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.xlsx}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        
-        \PY{k}{if} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{exists}\PY{p}{(}\PY{n}{file\PYZus{}path}\PY{p}{)}\PY{p}{:}
-            \PY{c+c1}{\PYZsh{} Load the saved data from Excel}
-            \PY{n}{index\PYZus{}data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}excel}\PY{p}{(}\PY{n}{file\PYZus{}path}\PY{p}{,} \PY{n}{index\PYZus{}col}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{parse\PYZus{}dates}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
-            
-            \PY{c+c1}{\PYZsh{} Convert the Date column to Datetime}
-            \PY{n}{index\PYZus{}data}\PY{o}{.}\PY{n}{index} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{to\PYZus{}datetime}\PY{p}{(}\PY{n}{index\PYZus{}data}\PY{o}{.}\PY{n}{index}\PY{o}{.}\PY{n}{normalize}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{tz\PYZus{}localize}\PY{p}{(}\PY{k+kc}{None}\PY{p}{)}\PY{p}{)}
-
-            \PY{c+c1}{\PYZsh{} Save it to the dictionary}
-            \PY{n}{index\PYZus{}datasets}\PY{p}{[}\PY{n}{ticker}\PY{p}{]} \PY{o}{=} \PY{n+nb}{round}\PY{p}{(}\PY{n}{index\PYZus{}data}\PY{p}{,}\PY{l+m+mi}{12}\PY{p}{)}
-            
-            \PY{c+c1}{\PYZsh{} Optional: Print the first few rows of the data for verification}
-            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Loaded data for }\PY{l+s+si}{\PYZob{}}\PY{n}{ticker}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-            
-
-
-    
+\PY{c+c1}{\PYZsh{} Loop over each ticker symbol to fetch the data}
+\PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{all\PYZus{}tickers}\PY{p}{:}
+    \PY{c+c1}{\PYZsh{} Retrieve the historical data starting from November 20, 1992}
+    \PY{n}{index} \PY{o}{=} \PY{n}{yf}\PY{o}{.}\PY{n}{Ticker}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}
+    \PY{c+c1}{\PYZsh{}Save to dictionary}
+    \PY{n}{index\PYZus{}datasets}\PY{p}{[}\PY{n}{ticker}\PY{p}{]} \PY{o}{=} \PY{n}{index}\PY{o}{.}\PY{n}{history}\PY{p}{(}\PY{n}{start}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{1992\PYZhy{}11\PYZhy{}20}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}   \PY{c+c1}{\PYZsh{}(start=\PYZdq{}1992\PYZhy{}11\PYZhy{}20\PYZdq{})}
+    \PY{c+c1}{\PYZsh{} Convert the Date column to Datetime}
+    \PY{p}{(}\PY{n}{index\PYZus{}datasets}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{index} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{to\PYZus{}datetime}\PY{p}{(}\PY{p}{(}\PY{n}{index\PYZus{}datasets}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{index}\PY{o}{.}\PY{n}{normalize}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{tz\PYZus{}localize}\PY{p}{(}\PY{k+kc}{None}\PY{p}{)}\PY{p}{)}
+    \PY{n}{index\PYZus{}datasets}\PY{p}{[}\PY{n}{ticker}\PY{p}{]} \PY{o}{=} \PY{n+nb}{round}\PY{p}{(}\PY{n}{index\PYZus{}datasets}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{,}\PY{l+m+mi}{12}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-Loaded data for \^{}GDAXI
-Loaded data for \^{}AEX
-Loaded data for \^{}FTSE
-Loaded data for \^{}N225
-Loaded data for \^{}GSPC
-Loaded data for \^{}GSPTSE
-Loaded data for \^{}TYX
-    \end{Verbatim}
-
-    \paragraph{Compute log-returns}\label{compute-log-returns}
+    \subsubsection{Compute log-returns}\label{compute-log-returns}
 
 We merge all of the data stored in the index\_datasets dictionary into
 one Pandas dataframe. We sample the data on a monthly basis, using a
@@ -714,51 +570,35 @@ We then compute the monthly log-returns for each index. We then drop all
 data apart from the date and monthly log-returns from our dataframe.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{310}{\boxspacing}
+\prompt{In}{incolor}{3}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Initialize a DataFrame to store merged data}
 \PY{n}{merged\PYZus{}data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
-\PY{n}{k}\PY{o}{=}\PY{l+m+mi}{0}
-
 \PY{c+c1}{\PYZsh{} Loop over each ticker symbol to fetch the data}
 \PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{all\PYZus{}tickers}\PY{p}{:}
-
     \PY{n}{index\PYZus{}data} \PY{o}{=} \PY{n}{index\PYZus{}datasets}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}
-
     \PY{c+c1}{\PYZsh{} Extract only the Date and Close columns, reset the index}
     \PY{n}{close\PYZus{}data} \PY{o}{=} \PY{p}{(}\PY{n}{index\PYZus{}data}\PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
-
     \PY{n}{close\PYZus{}data}\PY{o}{.}\PY{n}{rename}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{ticker}\PY{p}{\PYZcb{}}\PY{p}{,}\PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
-    
     \PY{c+c1}{\PYZsh{} Merge with the previously merged data}
-    \PY{k}{if} \PY{n}{merged\PYZus{}data}\PY{o}{.}\PY{n}{empty}\PY{p}{:}
-        \PY{n}{merged\PYZus{}data} \PY{o}{=} \PY{n}{close\PYZus{}data}
-    \PY{k}{else}\PY{p}{:}
-        \PY{n}{merged\PYZus{}data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{merge}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{,} \PY{n}{close\PYZus{}data}\PY{p}{,} \PY{n}{on}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Date}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{k}{if} \PY{n}{merged\PYZus{}data}\PY{o}{.}\PY{n}{empty}\PY{p}{:}\PY{n}{merged\PYZus{}data} \PY{o}{=} \PY{n}{close\PYZus{}data}
+    \PY{k}{else}\PY{p}{:}\PY{n}{merged\PYZus{}data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{merge}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{,} \PY{n}{close\PYZus{}data}\PY{p}{,} \PY{n}{on}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Date}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 
-\PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{all\PYZus{}tickers}\PY{p}{:}
-    \PY{c+c1}{\PYZsh{}Forward fill missing data}
-    \PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{n}{ticker}\PY{p}{]} \PY{o}{=} \PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{o}{.}\PY{n}{ffill}\PY{p}{(}\PY{p}{)}
+\PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{all\PYZus{}tickers}\PY{p}{:} \PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{n}{ticker}\PY{p}{]} \PY{o}{=} \PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{o}{.}\PY{n}{ffill}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}Forward fill missing data}
 
-\PY{c+c1}{\PYZsh{}Resample at end of each month}
-\PY{n}{merged\PYZus{}data} \PY{o}{=} \PY{n}{merged\PYZus{}data}\PY{o}{.}\PY{n}{resample}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ME}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{last}\PY{p}{(}\PY{p}{)}
-
-\PY{c+c1}{\PYZsh{}Compute Log Returns}
-\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{merged\PYZus{}data}\PY{o}{.}\PY{n}{pct\PYZus{}change}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-
-\PY{c+c1}{\PYZsh{}Drop blank entries in first row (if any)}
-\PY{n}{merged\PYZus{}data}\PY{o}{.}\PY{n}{dropna}\PY{p}{(}\PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\PY{n}{merged\PYZus{}data} \PY{o}{=} \PY{n}{merged\PYZus{}data}\PY{o}{.}\PY{n}{resample}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ME}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{last}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}Resample at end of each month}
+\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{merged\PYZus{}data}\PY{o}{.}\PY{n}{pct\PYZus{}change}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{}Compute Log Returns}
+\PY{n}{merged\PYZus{}data}\PY{o}{.}\PY{n}{dropna}\PY{p}{(}\PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{c+c1}{\PYZsh{}Drop blank entries in first row (if any)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \section{Model Fitting}\label{model-fitting}
 
-    \paragraph{Compute Emperical Moments}\label{compute-emperical-moments}
+    \subsection{Compute Empirical Moments}\label{compute-empirical-moments}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{311}{\boxspacing}
+\prompt{In}{incolor}{4}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} Create a dataframe for the first four empirical moments (mean, variance, skewness, kurtosis)}
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Empirical moments for each index}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{s monthly log\PYZhy{}returns:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{moments\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Mean}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Variance}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Skewness}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Kurtosis}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{index}\PY{o}{=}\PY{n}{all\PYZus{}tickers}\PY{p}{)}
 
@@ -769,48 +609,47 @@ data apart from the date and monthly log-returns from our dataframe.
     \PY{n}{moments\PYZus{}df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{ticker}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Variance}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{p}{)}
     \PY{n}{moments\PYZus{}df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{ticker}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Skewness}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{skew}\PY{p}{(}\PY{p}{)}
     \PY{n}{moments\PYZus{}df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{ticker}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Kurtosis}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{data}\PY{o}{.}\PY{n}{kurtosis}\PY{p}{(}\PY{p}{)}
-
-\PY{n+nb}{print}\PY{p}{(}\PY{n}{moments\PYZus{}df}\PY{p}{)}   
+\PY{n}{display}\PY{p}{(}\PY{n}{moments\PYZus{}df}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
 Empirical moments for each index's monthly log-returns:
 
-             Mean  Variance  Skewness  Kurtosis
-\^{}GDAXI   0.006703  0.003432 -0.825112  2.748861
-\^{}AEX     0.005083  0.002829 -0.934392  2.595402
-\^{}FTSE    0.002842  0.001509  -0.69922  1.200117
-\^{}N225    0.002085  0.003134 -0.584054  1.236312
-\^{}GSPC     0.00686  0.001819 -0.660288  1.198035
-\^{}GSPTSE  0.005302  0.001734  -1.06382  3.594747
-\^{}TYX    -0.001292  0.004282 -0.132197   3.96642
     \end{Verbatim}
 
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+             Mean  Variance  Skewness  Kurtosis
+\^{}GDAXI   0.006691  0.003432 -0.824921   2.75046
+\^{}AEX     0.005077  0.002829 -0.934099  2.595312
+\^{}FTSE     0.00283  0.001509 -0.698239  1.198767
+\^{}N225    0.002085  0.003134 -0.584036  1.236407
+\^{}GSPC     0.00687  0.001819 -0.661003  1.198823
+\^{}GSPTSE  0.005288  0.001735 -1.062607  3.589094
+\^{}TYX    -0.001296  0.004282 -0.132169   3.96768
+    \end{Verbatim}
+
+    
     \subsection{Fit GARCH Models}\label{fit-garch-models}
 
 Here, we first fit a Students-t GARCH model to the log-return data for
-each index, using the arch library.
+each index, using the arch library. To do this, we must first decide
+what order \((p)\) to use for the GARCH terms \((\sigma^2_t)\), and what
+order \((q)\) to use for the ARCH Terms \((\epsilon_t)\).
 
-To do this, we must first decide what order \((p)\) to use for the GARCH
-terms \((\sigma^2_t)\), and what order \((q)\) to use for the ARCH Terms
-\((\epsilon_t)\).
-
-    \paragraph{Choose (p,q)}\label{choose-pq}
+    \subsubsection{Choose (p,q)}\label{choose-pq}
 
 We will test different pairs of \((p,q)\), and choose the one with the
 lowest average Akaike Information Criterion (AIC) across all
-distributions and indices.
-
-Note: We are actually fitting the GARCH model to 100 times the
-log-return data, as recommended by the library documentation. This is
-done to improve numerical stability.
+distributions and indices. Note that we are actually fitting the GARCH
+model to 100 times the log-return data, as recommended by the library
+documentation. This is done to improve numerical stability.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{312}{\boxspacing}
+\prompt{In}{incolor}{5}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{distributions} \PY{o}{=} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{normal}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{skewt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-
 \PY{n}{combinations} \PY{o}{=} \PY{p}{[}\PY{p}{(}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)} \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{]}
 \PY{c+c1}{\PYZsh{} i.e. [(1,1),(1,2),...,(1,4),(2,1),(2,2),...,(4,4)]}
 
@@ -823,70 +662,71 @@ done to improve numerical stability.
             \PY{c+c1}{\PYZsh{} as suggested by the documentation, we scale our data to improve numerical stability}
             \PY{n}{model} \PY{o}{=} \PY{n}{arch\PYZus{}model}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{100}\PY{p}{,} \PY{n}{vol}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Garch}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{p}\PY{o}{=}\PY{n}{p}\PY{p}{,} \PY{n}{q}\PY{o}{=}\PY{n}{q}\PY{p}{,} \PY{n}{dist}\PY{o}{=}\PY{n}{dist}\PY{p}{,} \PY{n}{rescale}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}  
             \PY{n}{aic} \PY{o}{=} \PY{n}{model}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{options}\PY{o}{=}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{maxiter}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{10000}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ftol}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mf}{1e\PYZhy{}8}\PY{p}{\PYZcb{}}\PY{p}{,}\PY{n}{disp}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{off}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{aic}
-
+            \PY{c+c1}{\PYZsh{}Record best (p,q) for each dist/index pair}
             \PY{k}{if} \PY{n}{best\PYZus{}AIC}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{dist}\PY{p}{,}\PY{n}{ticker}\PY{p}{]} \PY{o}{\PYZgt{}} \PY{n}{aic}\PY{p}{:}
                 \PY{n}{best\PYZus{}AIC}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{dist}\PY{p}{,}\PY{n}{ticker}\PY{p}{]} \PY{o}{=} \PY{n}{aic}
                 \PY{n}{best\PYZus{}pair}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{dist}\PY{p}{,}\PY{n}{ticker}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{p}\PY{p}{,}\PY{n}{q}\PY{p}{)}
-
-\PY{n+nb}{print}\PY{p}{(}\PY{n}{best\PYZus{}pair}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{round}\PY{p}{(}\PY{n}{best\PYZus{}AIC}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+\PY{n}{display}\PY{p}{(}\PY{n}{best\PYZus{}pair}\PY{p}{)}
+\PY{n}{display}\PY{p}{(}\PY{n}{best\PYZus{}AIC}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
+    
     \begin{Verbatim}[commandchars=\\\{\}]
         \^{}GDAXI    \^{}AEX   \^{}FTSE   \^{}N225   \^{}GSPC \^{}GSPTSE    \^{}TYX
 normal  (1, 1)  (1, 1)  (1, 1)  (1, 1)  (1, 1)  (1, 1)  (1, 4)
 t       (1, 1)  (1, 1)  (1, 1)  (1, 1)  (1, 1)  (1, 1)  (1, 4)
 skewt   (1, 1)  (1, 1)  (1, 1)  (1, 1)  (1, 1)  (1, 1)  (1, 4)
-         \^{}GDAXI     \^{}AEX    \^{}FTSE    \^{}N225    \^{}GSPC  \^{}GSPTSE     \^{}TYX
-normal  2417.25  2309.76  2106.20  2418.14  2151.53  2142.13  2449.53
-t       2393.25  2305.33  2102.16  2415.92  2150.67  2125.99  2424.26
-skewt   2380.69  2291.11  2086.74  2404.97  2128.18  2109.61  2424.42
     \end{Verbatim}
 
+    
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+             \^{}GDAXI         \^{}AEX        \^{}FTSE        \^{}N225        \^{}GSPC  \textbackslash{}
+normal  2417.101759  2309.746993  2106.259017  2418.134960  2151.502832   
+t       2393.009971  2305.313312  2102.273644  2415.909522  2150.634685   
+skewt   2380.483416  2291.146543  2086.902825  2404.967300  2128.086483   
+
+            \^{}GSPTSE         \^{}TYX  
+normal  2142.290945  2449.473316  
+t       2126.277537  2424.195133  
+skewt   2109.856289  2424.355801  
+    \end{Verbatim}
+
+    
     The above results suggest that GARCH(1,1) models best fit our data, for
 all distribution/equity index pairs. Also, the skewed Student's-t
 GARCH(1,1) model has the best fit for all equity indices, as evident by
-its relatively lower AIC.
+its relatively lower AIC. Thus, it is best if we set the order of our
+GARCH and ARCH terms to (1,1), for each index and distribution.
 
-Thus, it is best if we set the order of our GARCH and ARCH terms to
-(1,1), for each index and distribution.
-
-    \subparagraph{Fit GARCH(1,1) models}\label{fit-garch11-models}
+    \subsubsection{Fit GARCH(1,1) models}\label{fit-garch11-models}
 
 Next, we will save our normal, Student's-t and skewed Student's-t
-GARCH(1,1) models, as well as their standarized residuals. We also model
-the US 30 Yield Treasury Bond yield, to illustate the situation in our
-introduction.
+GARCH(1,1) models, as well as their standardized residuals. We also
+model the US 30 Yield Treasury Bond yield, to illustrate the situation
+in our introduction.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{313}{\boxspacing}
+\prompt{In}{incolor}{6}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{fitted\PYZus{}models} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
-\PY{n}{params} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
-\PY{n}{std\PYZus{}residuals} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
-
-\PY{c+c1}{\PYZsh{}Fit each GARCH model, store models in fitted\PYZus{}models dictionary and standarized residuals in std\PYZus{}residuals dictionary}
+\PY{n}{fitted\PYZus{}models} \PY{p}{,}\PY{n}{params}\PY{p}{,} \PY{n}{std\PYZus{}residuals} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}\PY{p}{,} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}\PY{p}{,} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+\PY{c+c1}{\PYZsh{}Fit each GARCH model, store models in fitted\PYZus{}models dictionary and standarized residuals in std\PYZus{}residuals dataframe}
 \PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
-    
         \PY{c+c1}{\PYZsh{} as suggested by the documentation, we scale our data to improve numerical stability}
     \PY{n}{fitted\PYZus{}models}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{p}{\PYZob{}}\PY{n}{ticker}\PY{p}{:} \PY{n}{arch\PYZus{}model}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{100}\PY{p}{,} \PY{n}{vol}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Garch}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{p}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{q}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{dist}\PY{o}{=}\PY{n}{dist}\PY{p}{,} \PY{n}{rescale}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
                                         \PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{options}\PY{o}{=}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{maxiter}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{1000}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ftol}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mf}{1e\PYZhy{}8}\PY{p}{\PYZcb{}}\PY{p}{,}\PY{n}{disp}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{off}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} 
-                                    \PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{all\PYZus{}tickers}\PY{p}{\PYZcb{}}
-       
+                                    \PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{all\PYZus{}tickers}\PY{p}{\PYZcb{}}   
     \PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{[}\PY{n}{fitted\PYZus{}models}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{o}{.}\PY{n}{resid} \PY{o}{/} \PY{n}{fitted\PYZus{}models}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{o}{.}\PY{n}{conditional\PYZus{}volatility}
                                         \PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{all\PYZus{}tickers}\PY{p}{]}\PY{p}{,}\PY{n}{index} \PY{o}{=} \PY{n}{all\PYZus{}tickers}\PY{p}{)}\PY{o}{.}\PY{n}{T}
-    
-\PY{c+c1}{\PYZsh{}Creates a dataframe with the fitted parameters from each model, and prints results}
+\PY{c+c1}{\PYZsh{}Creates a dataframe with the fitted parameters from each model}
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Fitted parameters for each model:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
-    \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{n}{all\PYZus{}tickers}\PY{p}{)}
+    \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{n}{all\PYZus{}tickers}\PY{p}{)}
     \PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{all\PYZus{}tickers}\PY{p}{:}
-        \PY{n}{df}\PY{p}{[}\PY{n}{ticker}\PY{p}{]} \PY{o}{=} \PY{n}{fitted\PYZus{}models}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{o}{.}\PY{n}{params}
-
-    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Model: }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n}{dist}\PY{p}{)}
-    \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{round}\PY{p}{(}\PY{n}{df}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
-    \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{df}
+        \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]} \PY{o}{=} \PY{n}{fitted\PYZus{}models}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{o}{.}\PY{n}{params}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Model: }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n}{dist}\PY{p}{,}\PY{n}{end}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{n}{display}\PY{p}{(}\PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -894,275 +734,270 @@ introduction.
 Fitted parameters for each model:
 
 Model: normal
-           \^{}GDAXI     \^{}AEX    \^{}FTSE     \^{}N225    \^{}GSPC  \^{}GSPTSE     \^{}TYX
-mu        0.96413  0.81644  0.46937   0.30679  0.86002  0.84143 -0.25449
-omega     4.48422  3.10260  1.46425  12.15326  1.01616  2.38309  7.06496
-alpha[1]  0.19497  0.26727  0.17240   0.11457  0.18891  0.34923  0.25131
-beta[1]   0.68466  0.63542  0.73668   0.49666  0.76467  0.56289  0.58163
-
-Model: t
-           \^{}GDAXI     \^{}AEX    \^{}FTSE     \^{}N225     \^{}GSPC  \^{}GSPTSE     \^{}TYX
-mu        1.17846  0.90692  0.60052   0.47316   0.96469  0.82941 -0.24311
-omega     3.32143  3.45841  1.65368   2.20445   1.00371  1.46103  0.61276
-alpha[1]  0.18755  0.25124  0.18675   0.04877   0.19368  0.19025  0.06148
-beta[1]   0.72808  0.63266  0.71356   0.87897   0.76326  0.73664  0.92769
-nu        5.90685  9.41351  9.05120  12.44338  12.09854  6.68848  5.07259
-
-Model: skewt
-           \^{}GDAXI      \^{}AEX     \^{}FTSE     \^{}N225     \^{}GSPC  \^{}GSPTSE     \^{}TYX
-mu        0.86357   0.70533   0.44126   0.29193   0.82432  0.60354 -0.33474
-omega     3.49826   2.68825   1.54851   2.87828   0.96162  1.09066  0.73884
-alpha[1]  0.17152   0.23363   0.15931   0.06534   0.19289  0.15650  0.07568
-beta[1]   0.72828   0.67443   0.73541   0.83926   0.75932  0.78629  0.91121
-eta       6.80541  11.15431  13.43454  18.90336  15.70029  8.17215  5.41805
-lambda   -0.28906  -0.30059  -0.30482  -0.26259  -0.35255 -0.33997 -0.08834
     \end{Verbatim}
 
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+            \^{}GDAXI      \^{}AEX     \^{}FTSE      \^{}N225     \^{}GSPC   \^{}GSPTSE  \textbackslash{}
+mu        0.962595  0.815584  0.467662   0.306701  0.861011  0.840098   
+omega     4.472001  3.101404  1.466476  12.145274  1.016401  2.388316   
+alpha[1]  0.195138  0.267256  0.172319   0.114560  0.188905  0.349941   
+beta[1]   0.684832  0.635464  0.736607   0.496925  0.764643  0.562227   
+
+              \^{}TYX  
+mu       -0.254837  
+omega     7.062766  
+alpha[1]  0.251255  
+beta[1]   0.581669  
+    \end{Verbatim}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+Model: t
+    \end{Verbatim}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+            \^{}GDAXI      \^{}AEX     \^{}FTSE      \^{}N225      \^{}GSPC   \^{}GSPTSE  \textbackslash{}
+mu        1.176980  0.905821  0.597849   0.473077   0.966314  0.827391   
+omega     3.303976  3.456597  1.657939   2.203972   1.003940  1.468203   
+alpha[1]  0.188118  0.251224  0.186542   0.048784   0.193731  0.191023   
+beta[1]   0.728181  0.632739  0.713412   0.878970   0.763205  0.735646   
+nu        5.893826  9.413719  9.095880  12.441729  12.054167  6.716557   
+
+              \^{}TYX  
+mu       -0.243223  
+omega     0.616889  
+alpha[1]  0.061737  
+beta[1]   0.927331  
+nu        5.073379  
+    \end{Verbatim}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+Model: skewt
+    \end{Verbatim}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+            \^{}GDAXI       \^{}AEX      \^{}FTSE      \^{}N225      \^{}GSPC   \^{}GSPTSE  \textbackslash{}
+mu        0.861619   0.704819   0.439732   0.291820   0.825220  0.601850   
+omega     3.478294   2.689154   1.551337   2.877517   0.961396  1.092803   
+alpha[1]  0.172326   0.233617   0.159156   0.065356   0.192949  0.156737   
+beta[1]   0.728239   0.674386   0.735369   0.839261   0.759284  0.786065   
+eta       6.781941  11.166049  13.521038  18.893520  15.622132  8.196171   
+lambda   -0.288247  -0.300320  -0.304656  -0.262524  -0.352774 -0.340294   
+
+              \^{}TYX  
+mu       -0.335107  
+omega     0.744395  
+alpha[1]  0.076044  
+beta[1]   0.910711  
+eta       5.420261  
+lambda   -0.088599  
+    \end{Verbatim}
+
+    
     Recall that we scaled our log-returns by a factor of \(100\) before
 fitting each model. Hence, our mean returns (mu) above are scaled by a
 factor of \(100\), while our baseline variances (omega) are scaled by a
-factor of \(100^2\)
+factor of \(100^2\).
 
-We note that, in each model, the Nikkei 225 has a low alpha parameter,
-suggesting a lack of volatility clustering. Additionally, we note that,
-when compared to the other indices, the Nikkei 225 and S\&P 500
-log-return distributions demonstrate thinner tails, as demonstrated by
-the relatively greater degrees of freedom in both the classical and
-skewed Student's-t GARCH models. We observe that each index's returns
-are negatively skewed, as evident by the lambda parameter in the skewed
-Student's-t GARCH models.
-
-From here on, we will only focus on equity indices, as they are the main
-focus of this study.
+We note that, in each model, the Nikkei 225 returns have a low alpha
+parameter, suggesting a lack of volatility clustering. Additionally,
+when compared to the other indices, we note that the Nikkei 225 and S\&P
+500 returns demonstrate thinner tails, as demonstrated by the relatively
+greater degrees of freedom in both the classical and skewed Student's-t
+GARCH models. We observe that each index's returns are negatively
+skewed, as evident by the lambda parameter in the skewed Student's-t
+GARCH models. From here on, we will only focus on equity indices, as
+they are the main focus of this study.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{314}{\boxspacing}
+\prompt{In}{incolor}{7}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{tickers} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}GDAXI}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}AEX}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}FTSE}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}N225}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}GSPC}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}GSPTSE}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
-\PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
-    \PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{tickers}\PY{p}{]}
-    \PY{n}{fitted\PYZus{}models\PYZus{}temp} \PY{o}{=} \PY{p}{\PYZob{}}\PY{n}{ticker}\PY{p}{:} \PY{n}{fitted\PYZus{}models}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]} \PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{tickers}\PY{p}{\PYZcb{}}
-    \PY{n}{fitted\PYZus{}models}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{fitted\PYZus{}models\PYZus{}temp}
+\PY{n}{tickers} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}GDAXI}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}AEX}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}FTSE}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}N225}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}GSPC}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZca{}GSPTSE}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{c+c1}{\PYZsh{}Drop \PYZdq{}\PYZca{}TYX\PYZdq{}}
+\PY{n}{merged\PYZus{}data} \PY{o}{=} \PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{n}{tickers}\PY{p}{]}
+\PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:} \PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{tickers}\PY{p}{]}
 \end{Verbatim}
 \end{tcolorbox}
 
-    \paragraph{GARCH Goodness of Fit
+    \subsection{GARCH Goodness of Fit
 Tests}\label{garch-goodness-of-fit-tests}
 
-    \subparagraph{Plot ACF of Standardized
+    \subsubsection{Plot ACF of Standardized
 Residuals}\label{plot-acf-of-standardized-residuals}
 
 We plot the ACF of the residuals of each GARCH, and display them side by
-side for comparision.
+side for comparison.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{315}{\boxspacing}
+\prompt{In}{incolor}{8}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
-    \PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5} \PY{o}{*} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
-    \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{)}\PY{p}{:}
-        \PY{n}{ticker} \PY{o}{=} \PY{n}{tickers}\PY{p}{[}\PY{n}{i}\PY{p}{]}
-        \PY{n}{plot\PYZus{}acf}\PY{p}{(}\PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{,}\PY{n}{lags} \PY{o}{=} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ACF of }\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n}{ticker} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{dist} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ GARCH Residuals}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5} \PY{o}{*} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{5}\PY{o}{*}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{distributions}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+    \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+        \PY{n}{dist}\PY{p}{,} \PY{n}{ticker} \PY{o}{=} \PY{n}{distributions}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{tickers}\PY{p}{[}\PY{n}{j}\PY{p}{]}
+        \PY{n}{plot\PYZus{}acf}\PY{p}{(}\PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{,}\PY{n}{lags} \PY{o}{=} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{)}
+        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ACF of }\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n}{ticker} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{dist} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ GARCH Residuals}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_24_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_24_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_24_2.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_23_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     The above results suggest that there is little autocorrelation in the
-stardarized residuals of our fitted GARCH models.
+standarized residuals of our fitted GARCH models.
 
-    \subparagraph{Plot ACF of Squared Standardized
+    \subsubsection{Plot ACF of Squared Standardized
 Residuals}\label{plot-acf-of-squared-standardized-residuals}
 
 We also plot the ACF of the squared residuals of each GARCH.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{316}{\boxspacing}
+\prompt{In}{incolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
-    \PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5} \PY{o}{*} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
-    \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{)}\PY{p}{:}
-        \PY{n}{ticker} \PY{o}{=} \PY{n}{tickers}\PY{p}{[}\PY{n}{i}\PY{p}{]}
-        \PY{n}{plot\PYZus{}acf}\PY{p}{(}\PY{p}{(}\PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{lags} \PY{o}{=} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
-        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ACF of }\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n}{ticker} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{dist} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ GARCH Residuals}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5} \PY{o}{*} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{5}\PY{o}{*}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{distributions}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+    \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+        \PY{n}{dist}\PY{p}{,} \PY{n}{ticker} \PY{o}{=} \PY{n}{distributions}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{tickers}\PY{p}{[}\PY{n}{j}\PY{p}{]}
+        \PY{n}{plot\PYZus{}acf}\PY{p}{(}\PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{lags} \PY{o}{=} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{)}
+        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ACF of }\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n}{ticker} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{dist} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ Squared GARCH Residuals}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_27_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_27_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_27_2.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_26_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     The above results suggest that there is little autocorrelation in the
-stardarized squared residuals of our fitted GARCH models.
+standarized squared residuals of our fitted GARCH models.
 
-    \subparagraph{Plot QQ Plot for
+    \subsubsection{Plot QQ Plot for
 residuals}\label{plot-qq-plot-for-residuals}
 
-We also conduct a QQ Plot of the standarized residuals of each GARCH.
+We also conduct a QQ Plot of the standardized residuals of each GARCH.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{317}{\boxspacing}
+\prompt{In}{incolor}{10}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
-    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{QQ Plots of }\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n}{dist} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ GARCH Residuals}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-    \PY{n}{num\PYZus{}tickers} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}
-    \PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{num\PYZus{}tickers}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5} \PY{o}{*} \PY{n}{num\PYZus{}tickers}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
-
-    \PY{n}{n} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{)}
+\PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5} \PY{o}{*} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{5}\PY{o}{*}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{distributions}\PY{p}{)}\PY{p}{)}\PY{p}{:}
     
-    \PY{n}{quantiles} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{n} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.5}\PY{p}{)} \PY{o}{/} \PY{n}{n}
+    \PY{n}{quantiles} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.5}\PY{p}{)} \PY{o}{/} \PY{n+nb}{len}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{)}
 
-    \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{)}\PY{p}{:}
-        \PY{n}{ticker} \PY{o}{=} \PY{n}{tickers}\PY{p}{[}\PY{n}{i}\PY{p}{]}
-        \PY{k}{if} \PY{n}{dist} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{normal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{theoretical\PYZus{}quantiles}  \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{norm}\PY{o}{.}\PY{n}{rvs}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{100000}\PY{p}{)}\PY{p}{,} \PY{n}{quantiles}\PY{p}{)}
-
+    \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{)}\PY{p}{:}  \PY{c+c1}{\PYZsh{} Get theoretical quantiles}
+        \PY{n}{dist}\PY{p}{,} \PY{n}{ticker} \PY{o}{=} \PY{n}{distributions}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{tickers}\PY{p}{[}\PY{n}{j}\PY{p}{]}
+        \PY{k}{if} \PY{n}{dist} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{normal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{theoretical\PYZus{}quantiles}  \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{norm}\PY{o}{.}\PY{n}{rvs}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{10000}\PY{p}{)}\PY{p}{,} \PY{n}{quantiles}\PY{p}{)}
         \PY{k}{elif} \PY{n}{dist} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{t}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
             \PY{n}{nu} \PY{o}{=} \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{nu}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-            \PY{n}{theoretical\PYZus{}quantiles}  \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{t}\PY{o}{.}\PY{n}{rvs}\PY{p}{(}\PY{n}{nu}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{100000}\PY{p}{)}\PY{p}{,} \PY{n}{quantiles}\PY{p}{)}
-
+            \PY{n}{theoretical\PYZus{}quantiles}  \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{t}\PY{o}{.}\PY{n}{rvs}\PY{p}{(}\PY{n}{nu}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{10000}\PY{p}{)}\PY{p}{,} \PY{n}{quantiles}\PY{p}{)}
         \PY{k}{elif} \PY{n}{dist} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{skewt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} 
             \PY{n}{eta} \PY{o}{=} \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{eta}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
             \PY{n}{lambda\PYZus{}param} \PY{o}{=} \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{lambda}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
             \PY{n}{skew\PYZus{}t\PYZus{}rvs} \PY{o}{=} \PY{n}{SkewStudent}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{simulate}\PY{p}{(}\PY{n}{parameters}\PY{o}{=}\PY{p}{[}\PY{n}{eta}\PY{p}{,} \PY{n}{lambda\PYZus{}param}\PY{p}{]}\PY{p}{)}
             \PY{n}{theoretical\PYZus{}quantiles}  \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{skew\PYZus{}t\PYZus{}rvs}\PY{p}{(}\PY{l+m+mi}{10000}\PY{p}{)}\PY{p}{,} \PY{n}{quantiles}\PY{p}{)}
-
-        \PY{n}{sorted\PYZus{}std\PYZus{}residuals} \PY{o}{=} \PY{n+nb}{sorted}\PY{p}{(}\PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{)}
-        
-        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{sorted\PYZus{}std\PYZus{}residuals}\PY{p}{,}\PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{blue}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{marker} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{red}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}
-
-    \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-        
+            
+        \PY{n}{sorted\PYZus{}std\PYZus{}residuals} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{,}\PY{n}{quantiles}\PY{p}{)} \PY{c+c1}{\PYZsh{}Sample Quantiles}
+        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{sorted\PYZus{}std\PYZus{}residuals}\PY{p}{,}\PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{blue}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{marker} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{}QQ Plots}
+        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{red}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}    
 \end{Verbatim}
 \end{tcolorbox}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-QQ Plots of normal GARCH Residuals
-    \end{Verbatim}
-
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_30_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-QQ Plots of t GARCH Residuals
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_30_3.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-QQ Plots of skewt GARCH Residuals
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_30_5.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_29_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     The above results suggest that the skewed Student's-t distribution has
-the best fit, across all indices.
-
-However, most of the our models predict slightly more extreme negtaive
-shocks than the data suggests, as evident by bottom left regions in the
-above QQ Plots.
+the best fit, across all indices. However, most of the our models
+predict slightly more extreme negative shocks than the data suggests, as
+evident by bottom left regions in the above QQ Plots.
 
     \subsection{Fit Multivariate Model}\label{fit-multivariate-model}
 
-    \section{Compute Spearman's Variance-Covariance
+    \subsubsection{Compute Spearman's Variance-Covariance
 Matrix}\label{compute-spearmans-variance-covariance-matrix}
 
-Using the standarized residuals from our Student's t GARCH model, we
-calculate the spearman correlation \& covariance of the standarized
+Using the standardized residuals from our Student's t GARCH model, we
+calculate the Spearman correlation \& covariance of the standardized
 residuals.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{318}{\boxspacing}
+\prompt{In}{incolor}{11}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{spearman\PYZus{}cov} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
-
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Spearman Correlation Matrix of Standarized Residuals}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Spearman Correlation Matrix of Standardized Residuals}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
-    \PY{n}{temp} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{index}\PY{o}{=}\PY{n}{tickers}\PY{p}{,}\PY{n}{columns}\PY{o}{=}\PY{n}{tickers}\PY{p}{)}
+    \PY{n}{spearman\PYZus{}cov}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{index}\PY{o}{=}\PY{n}{tickers}\PY{p}{,}\PY{n}{columns}\PY{o}{=}\PY{n}{tickers}\PY{p}{)}
     \PY{k}{for} \PY{n}{ticker\PYZus{}1} \PY{o+ow}{in} \PY{n}{tickers}\PY{p}{:}
         \PY{k}{for} \PY{n}{ticker\PYZus{}2} \PY{o+ow}{in} \PY{n}{tickers}\PY{p}{:}
-            
             \PY{c+c1}{\PYZsh{}Rank residuals}
             \PY{n}{ranked\PYZus{}residuals\PYZus{}1} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{Series}\PY{p}{(}\PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker\PYZus{}1}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{rank}\PY{p}{(}\PY{n}{method}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{average}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
             \PY{n}{ranked\PYZus{}residuals\PYZus{}2} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{Series}\PY{p}{(}\PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker\PYZus{}2}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{rank}\PY{p}{(}\PY{n}{method}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{average}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
-            
             \PY{c+c1}{\PYZsh{}Compute Spearman Correlation Coeff./Covariance }
-            \PY{n}{temp}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{ticker\PYZus{}1}\PY{p}{,}\PY{n}{ticker\PYZus{}2}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{corrcoef}\PY{p}{(}\PY{n}{ranked\PYZus{}residuals\PYZus{}1}\PY{p}{,}\PY{n}{ranked\PYZus{}residuals\PYZus{}2}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
-            
-    \PY{n}{spearman\PYZus{}cov}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{temp}        
+            \PY{n}{spearman\PYZus{}cov}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{ticker\PYZus{}1}\PY{p}{,}\PY{n}{ticker\PYZus{}2}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{corrcoef}\PY{p}{(}\PY{n}{ranked\PYZus{}residuals\PYZus{}1}\PY{p}{,}\PY{n}{ranked\PYZus{}residuals\PYZus{}2}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
     \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{GARCH Distribution: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{dist}\PY{p}{)}
-    \PY{n+nb}{print}\PY{p}{(}\PY{n}{spearman\PYZus{}cov}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{)}
-    \PY{n}{spearman\PYZus{}cov}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{spearman\PYZus{}cov}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{o}{.}\PY{n}{to\PYZus{}numpy}\PY{p}{(}\PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)} \PY{c+c1}{\PYZsh{}convert to numpy array for later}
-    \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+
+\PY{n}{display}\PY{p}{(}\PY{n}{spearman\PYZus{}cov}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{normal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{spearman\PYZus{}cov}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{t}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{spearman\PYZus{}cov}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{skewt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}spearman\PYZus{}cov[dist] = spearman\PYZus{}cov[dist].to\PYZus{}numpy(dtype=float) \PYZsh{}convert to numpy array for later}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-Spearman Correlation Matrix of Standarized Residuals
+Spearman Correlation Matrix of Standardized Residuals
 GARCH Distribution:  normal
-           \^{}GDAXI      \^{}AEX     \^{}FTSE     \^{}N225     \^{}GSPC   \^{}GSPTSE
-\^{}GDAXI        1.0  0.834389  0.722828  0.528443  0.715045  0.640025
-\^{}AEX     0.834389       1.0  0.748364   0.52752  0.715801  0.643565
-\^{}FTSE    0.722828  0.748364       1.0  0.414478  0.684442  0.674762
-\^{}N225    0.528443   0.52752  0.414478       1.0  0.511986  0.436771
-\^{}GSPC    0.715045  0.715801  0.684442  0.511986       1.0  0.730446
-\^{}GSPTSE  0.640025  0.643565  0.674762  0.436771  0.730446       1.0
-
 GARCH Distribution:  t
-           \^{}GDAXI      \^{}AEX     \^{}FTSE     \^{}N225     \^{}GSPC   \^{}GSPTSE
-\^{}GDAXI        1.0  0.834805   0.72218  0.531475  0.713148  0.639529
-\^{}AEX     0.834805       1.0  0.747889  0.531233  0.714845  0.648134
-\^{}FTSE     0.72218  0.747889       1.0  0.415437  0.682222   0.67857
-\^{}N225    0.531475  0.531233  0.415437       1.0  0.514955  0.443044
-\^{}GSPC    0.713148  0.714845  0.682222  0.514955       1.0  0.733162
-\^{}GSPTSE  0.639529  0.648134   0.67857  0.443044  0.733162       1.0
-
 GARCH Distribution:  skewt
-           \^{}GDAXI      \^{}AEX     \^{}FTSE     \^{}N225     \^{}GSPC   \^{}GSPTSE
-\^{}GDAXI        1.0  0.835681  0.724301  0.531427  0.715109  0.641378
-\^{}AEX     0.835681       1.0   0.74925  0.532172   0.71675  0.648637
-\^{}FTSE    0.724301   0.74925       1.0  0.417106  0.684398  0.678694
-\^{}N225    0.531427  0.532172  0.417106       1.0  0.513752  0.445453
-\^{}GSPC    0.715109   0.71675  0.684398  0.513752       1.0  0.733292
-\^{}GSPTSE  0.641378  0.648637  0.678694  0.445453  0.733292       1.0
-
     \end{Verbatim}
 
-    \paragraph{Fit Student's-t Copula}\label{fit-students-t-copula}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+           \^{}GDAXI      \^{}AEX     \^{}FTSE     \^{}N225     \^{}GSPC   \^{}GSPTSE
+\^{}GDAXI        1.0  0.834567  0.722668  0.528286  0.715864  0.639892
+\^{}AEX     0.834567       1.0  0.748302  0.527376  0.716041  0.643392
+\^{}FTSE    0.722668  0.748302       1.0  0.413915  0.684363  0.675111
+\^{}N225    0.528286  0.527376  0.413915       1.0  0.512309  0.436195
+\^{}GSPC    0.715864  0.716041  0.684363  0.512309       1.0  0.729924
+\^{}GSPTSE  0.639892  0.643392  0.675111  0.436195  0.729924       1.0
+    \end{Verbatim}
+
+    
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+           \^{}GDAXI      \^{}AEX     \^{}FTSE     \^{}N225     \^{}GSPC   \^{}GSPTSE
+\^{}GDAXI        1.0  0.834778  0.722214  0.531196  0.713858  0.639495
+\^{}AEX     0.834778       1.0  0.747903   0.53113  0.715048  0.648171
+\^{}FTSE    0.722214  0.747903       1.0  0.415055  0.682193  0.678865
+\^{}N225    0.531196   0.53113  0.415055       1.0  0.515219  0.442805
+\^{}GSPC    0.713858  0.715048  0.682193  0.515219       1.0  0.732767
+\^{}GSPTSE  0.639495  0.648171  0.678865  0.442805  0.732767       1.0
+    \end{Verbatim}
+
+    
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+           \^{}GDAXI      \^{}AEX     \^{}FTSE     \^{}N225     \^{}GSPC   \^{}GSPTSE
+\^{}GDAXI        1.0  0.835828  0.724327   0.53121  0.716047  0.641312
+\^{}AEX     0.835828       1.0  0.749276  0.532076  0.716959  0.648551
+\^{}FTSE    0.724327  0.749276       1.0  0.416492  0.684318  0.678965
+\^{}N225     0.53121  0.532076  0.416492       1.0  0.514127  0.445039
+\^{}GSPC    0.716047  0.716959  0.684318  0.514127       1.0  0.732812
+\^{}GSPTSE  0.641312  0.648551  0.678965  0.445039  0.732812       1.0
+    \end{Verbatim}
+
+    
+    \subsubsection{Fit Student's-t Copula}\label{fit-students-t-copula}
 
 Next, we will fit our Student's-t copula to our normal, Student's-t and
 skewed Student's-t GARCH marginal residuals. To do this, we will use the
@@ -1172,49 +1007,41 @@ constraint that \(\nu > 2\), by using scipy's minimize function, applied
 to our copula's log likelihood function.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{319}{\boxspacing}
+\prompt{In}{incolor}{12}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{u}\PY{p}{,}\PY{n}{fitted\PYZus{}df} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}\PY{p}{,}\PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
-
 \PY{k}{def} \PY{n+nf}{negative\PYZus{}tcopula\PYZus{}log\PYZus{}likelihood}\PY{p}{(}\PY{n}{nu}\PY{p}{,}\PY{n}{corr}\PY{p}{,}\PY{n}{x}\PY{p}{)}\PY{p}{:}
     \PY{n}{copula} \PY{o}{=} \PY{n}{StudentTCopula}\PY{p}{(}\PY{n}{corr}\PY{o}{=}\PY{n}{corr}\PY{p}{,}\PY{n}{df} \PY{o}{=} \PY{n}{nu}\PY{p}{,} \PY{n}{k\PYZus{}dim}\PY{o}{=}\PY{n}{corr}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
     \PY{k}{return} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{o}{*}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{copula}\PY{o}{.}\PY{n}{logpdf}\PY{p}{(}\PY{n}{row}\PY{p}{)} \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{x}\PY{p}{)}
-
-\PY{n}{options} \PY{o}{=} \PY{p}{\PYZob{}}
-    \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{maxiter}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{10000}\PY{p}{,} \PY{c+c1}{\PYZsh{}Max iterations}
-    \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gtol}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mf}{1e\PYZhy{}12}\PY{p}{,} \PY{c+c1}{\PYZsh{}Tolerance for convergence}
-    \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{disp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{k+kc}{True} \PY{c+c1}{\PYZsh{}Display warnings}
-\PY{p}{\PYZcb{}}
-
+\PY{n}{options} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{maxiter}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{10000}\PY{p}{,} \PY{c+c1}{\PYZsh{}Max iterations}
+            \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gtol}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mf}{1e\PYZhy{}12}\PY{p}{,} \PY{c+c1}{\PYZsh{}Tolerance for convergence}
+            \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{disp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{k+kc}{True} \PY{p}{\PYZcb{}} \PY{c+c1}{\PYZsh{}Display warnings}
 \PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
     \PY{n}{t\PYZus{}model} \PY{o}{=} \PY{n}{t}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{o}{.}\PY{n}{to\PYZus{}numpy}\PY{p}{(}\PY{p}{)}\PY{p}{)}
     \PY{n}{u}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{t}\PY{o}{.}\PY{n}{cdf}\PY{p}{(}\PY{n}{std\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{o}{.}\PY{n}{to\PYZus{}numpy}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{n}{t\PYZus{}model}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{t\PYZus{}model}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{t\PYZus{}model}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
-
     \PY{n}{fitted\PYZus{}df}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{minimize}\PY{p}{(}\PY{n}{negative\PYZus{}tcopula\PYZus{}log\PYZus{}likelihood}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{args} \PY{o}{=} \PY{p}{(}\PY{n}{spearman\PYZus{}cov}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{,}\PY{n}{u}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{)}\PY{p}{,}\PY{n}{bounds} \PY{o}{=} \PY{p}{[}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1000}\PY{p}{)}\PY{p}{]}\PY{p}{,}\PY{n}{options} \PY{o}{=} \PY{n}{options}\PY{p}{)}\PY{o}{.}\PY{n}{x}
-
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Multivariate\PYZhy{}t fitted degrees of freedom for standaridized residuals:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Normal:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{fitted\PYZus{}df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{normal}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Student}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{s\PYZhy{}t:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{fitted\PYZus{}df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Skewed Student}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{s\PYZhy{}t:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{fitted\PYZus{}df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{skewt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}
+\PY{n}{display}\PY{p}{(}\PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{fitted\PYZus{}df}\PY{p}{,}\PY{n}{index}\PY{o}{=}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Fitted df}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
+    
     \begin{Verbatim}[commandchars=\\\{\}]
-Multivariate-t fitted degrees of freedom for standaridized residuals:
-Normal: [11.33194331]
-Student's-t: [11.03030989]
-Skewed Student's-t: [11.03619766]
+              normal          t      skewt
+Fitted df  11.335846  11.031743  11.044519
     \end{Verbatim}
 
-    Following the procedure in ``Copula Methods in Finance'', we can sample
+    
+    \paragraph{Sampling Procedure}\label{sampling-procedure}
+
+Following the procedure in ``Copula Methods in Finance'', we can sample
 from our Student's t-copula using the following algorithm:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Find the Choelsky Decomposition A of R, where R represents our
-  Spearman Correlation Matrix
+  Find the Choelsky Decomposition A of R, where R is our Spearman Corr.
+  Matrix
 \item
   Simulate \(n\) i.i.d. \(N(0,1)\) random variables \(z_i\), set
   \(z=(z_1,z_2,...,z_n)\)
@@ -1231,148 +1058,96 @@ from our Student's t-copula using the following algorithm:
 \end{enumerate}
 
 We can then set \(t_i = F^{-1}_i (u_i)\) for \(i=1,2,...,n\) where
-\(F_i^{-1}\) represents the marginal inverse c.d.f for \(t_i\)
-
-Here, each \(t_i\) represents a simulated standardized residual.
-
-Conveniently, the statsmodels StudentTCopula class allows us to sample
-from our copula directly. We will use this instead to conduct 100,000
-samples from our copula. Then, applying the marginal inverse c.d.f's
-component wise, we get 100,000 simulations for our standardized
-residuals.
+\(F_i^{-1}\) represents the inverse c.d.f for \(T_i\). Here, each
+\(t_i\) represents a simulated standardized residual. Conveniently, the
+statsmodels StudentTCopula class allows us to sample from our copula
+directly. We will use this instead to conduct 100,000 samples from our
+copula. Then, applying the marginal inverse c.d.f's component wise, we
+get 100,000 simulations for our standardized residuals.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{320}{\boxspacing}
+\prompt{In}{incolor}{13}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{copulas} \PY{o}{=} \PY{p}{\PYZob{}}\PY{n}{dist}\PY{p}{:} \PY{n}{StudentTCopula}\PY{p}{(}\PY{n}{corr}\PY{o}{=}\PY{n}{spearman\PYZus{}cov}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{,}
                                 \PY{n}{df} \PY{o}{=} \PY{n}{fitted\PYZus{}df}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{,} 
                                 \PY{n}{k\PYZus{}dim}\PY{o}{=}\PY{n}{spearman\PYZus{}cov}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)} \PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{\PYZcb{}}
 
-
-\PY{k}{def} \PY{n+nf}{inverse\PYZus{}marginal}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{dist}\PY{p}{)}\PY{p}{:}
+\PY{k}{def} \PY{n+nf}{inverse\PYZus{}marginal}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{dist}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{}given a vector of quantiles, return inverse}
     \PY{n}{marginals} \PY{o}{=} \PY{p}{[}\PY{p}{]}
     \PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{tickers}\PY{p}{:}
-        \PY{c+c1}{\PYZsh{}We want to forecast standarized residuals}
-        \PY{n}{mu} \PY{o}{=} \PY{l+m+mi}{0}
-        \PY{n}{omega} \PY{o}{=} \PY{l+m+mi}{1}
-    
-        \PY{k}{if} \PY{n}{dist} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{normal}\PY{l+s+s2}{\PYZdq{}} \PY{p}{:}
-            \PY{n}{marginals}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{norm}\PY{o}{.}\PY{n}{ppf}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{tickers}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}\PY{p}{]}\PY{p}{,}\PY{n}{loc}\PY{o}{=}\PY{n}{mu}\PY{p}{,}\PY{n}{scale} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{omega}\PY{p}{)}\PY{p}{)}\PY{p}{)}
-        \PY{k}{elif} \PY{n}{dist} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
-            \PY{n}{nu} \PY{o}{=} \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{nu}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-            \PY{n}{marginals}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{t}\PY{o}{.}\PY{n}{ppf}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{tickers}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}\PY{p}{]}\PY{p}{,}\PY{n}{df} \PY{o}{=} \PY{n}{nu}\PY{p}{,} \PY{n}{loc}\PY{o}{=}\PY{n}{mu}\PY{p}{,}\PY{n}{scale} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{omega}\PY{p}{)}\PY{p}{)}\PY{p}{)}
-        \PY{k}{elif} \PY{n}{dist} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{skewt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
-            \PY{n}{eta} \PY{o}{=} \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{eta}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-            \PY{n}{lambda\PYZus{}param} \PY{o}{=} \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{lambda}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-            \PY{n}{marginals}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{(}\PY{n}{SkewStudent}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{ppf}\PY{p}{(}\PY{n}{pits} \PY{o}{=} \PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{tickers}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}\PY{p}{]}\PY{p}{,}\PY{n}{parameters}\PY{o}{=}\PY{p}{[}\PY{n}{eta}\PY{p}{,}\PY{n}{lambda\PYZus{}param}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{omega}\PY{p}{)}\PY{o}{+} \PY{n}{mu}\PY{p}{)}
+        \PY{k}{if} \PY{n}{dist} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{normal}\PY{l+s+s2}{\PYZdq{}} \PY{p}{:} \PY{n}{marginals}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{norm}\PY{o}{.}\PY{n}{ppf}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{tickers}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+        \PY{k}{elif} \PY{n}{dist} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{n}{marginals}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{t}\PY{o}{.}\PY{n}{ppf}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{tickers}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}\PY{p}{]}\PY{p}{,}\PY{n}{df} \PY{o}{=} \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{nu}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+        \PY{k}{elif} \PY{n}{dist} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{skewt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{n}{marginals}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{(}\PY{n}{SkewStudent}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{ppf}\PY{p}{(}\PY{n}{pits} \PY{o}{=} \PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{tickers}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}\PY{p}{]}\PY{p}{,}
+                                    \PY{n}{parameters}\PY{o}{=}\PY{p}{[}\PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{eta}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{lambda}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{)}
     \PY{k}{return} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{marginals}\PY{p}{)}\PY{o}{.}\PY{n}{T}\PY{p}{,}\PY{n}{columns} \PY{o}{=} \PY{n}{tickers}\PY{p}{)}
 
-\PY{k}{def} \PY{n+nf}{get\PYZus{}simulated\PYZus{}t}\PY{p}{(}\PY{n}{dist}\PY{p}{,} \PY{n}{num\PYZus{}samples} \PY{o}{=} \PY{l+m+mi}{100000}\PY{p}{)}\PY{p}{:}
+\PY{k}{def} \PY{n+nf}{get\PYZus{}simulated\PYZus{}t}\PY{p}{(}\PY{n}{dist}\PY{p}{,} \PY{n}{num\PYZus{}samples} \PY{o}{=} \PY{l+m+mi}{100000}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{}function to create samples from our copula, and convert to marginals}
     \PY{k}{return} \PY{n}{inverse\PYZus{}marginal}\PY{p}{(}\PY{n}{copulas}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{o}{.}\PY{n}{rvs}\PY{p}{(}\PY{n}{num\PYZus{}samples}\PY{p}{)}\PY{p}{,}\PY{n}{dist}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
-    We will plot QQplots of our marginal samples drawn from our copula,
+    \paragraph{Plot QQ Plot for marginal copula
+samples}\label{plot-qq-plot-for-marginal-copula-samples}
+
+We will plot QQplots of our marginal samples drawn from our copula,
 compared to our GARCH residuals. We expect there to be a strong fit, as
 our copula is fitted to the transformed residuals.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{321}{\boxspacing}
+\prompt{In}{incolor}{14}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{num\PYZus{}samples} \PY{o}{=} \PY{l+m+mi}{10000}
-\PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
-    \PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{num\PYZus{}tickers}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5} \PY{o}{*} \PY{n}{num\PYZus{}tickers}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
-    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{QQ Plots of copula marginal simulated residuals vs }\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n}{dist} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ GARCH Residuals}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-
-    \PY{n}{num\PYZus{}tickers} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}
+\PY{n}{num\PYZus{}samples} \PY{o}{=} \PY{l+m+mi}{100000}
+\PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5} \PY{o}{*} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{5}\PY{o}{*}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{distributions}\PY{p}{)}\PY{p}{)}\PY{p}{:}
     \PY{n}{n} \PY{o}{=} \PY{l+m+mi}{300}
-
     \PY{n}{quantiles} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{n} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.5}\PY{p}{)} \PY{o}{/} \PY{n}{n}
-    \PY{n}{simulated\PYZus{}results} \PY{o}{=} \PY{n}{get\PYZus{}simulated\PYZus{}t}\PY{p}{(}\PY{n}{dist}\PY{p}{)}
-    
-    \PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{tickers}\PY{p}{:}
-        \PY{n}{theoretical\PYZus{}quantiles} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-        
-        \PY{c+c1}{\PYZsh{}We want to forecast standarized residuals}
-        \PY{n}{mu} \PY{o}{=} \PY{l+m+mi}{0}
-        \PY{n}{omega} \PY{o}{=}  \PY{l+m+mi}{1}
-        \PY{k}{if} \PY{n}{dist} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{normal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{theoretical\PYZus{}quantiles}  \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{norm}\PY{o}{.}\PY{n}{rvs}\PY{p}{(}\PY{n}{mu}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{omega}\PY{p}{)}\PY{p}{,}\PY{n}{num\PYZus{}samples}\PY{p}{)}\PY{p}{,} \PY{n}{quantiles}\PY{p}{)}
+     \PY{c+c1}{\PYZsh{}Get simulated results for comparison}
 
-        \PY{k}{elif} \PY{n}{dist} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{t}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
-            \PY{n}{nu} \PY{o}{=} \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{nu}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-            \PY{n}{theoretical\PYZus{}quantiles}  \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{t}\PY{o}{.}\PY{n}{rvs}\PY{p}{(}\PY{n}{nu}\PY{p}{,}\PY{n}{mu}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{omega}\PY{p}{)}\PY{p}{,}\PY{n}{num\PYZus{}samples}\PY{p}{)}\PY{p}{,} \PY{n}{quantiles}\PY{p}{)}
+    \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+        \PY{n}{dist}\PY{p}{,} \PY{n}{ticker}\PY{p}{,} \PY{n}{theoretical\PYZus{}quantiles} \PY{o}{=} \PY{n}{distributions}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{tickers}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{p}{]}
+        \PY{k}{if} \PY{n}{dist} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{normal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n}{theoretical\PYZus{}quantiles} \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{norm}\PY{o}{.}\PY{n}{rvs}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{num\PYZus{}samples}\PY{p}{)}\PY{p}{,} \PY{n}{quantiles}\PY{p}{)}
+        \PY{k}{elif} \PY{n}{dist} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{t}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}\PY{n}{theoretical\PYZus{}quantiles} \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{t}\PY{o}{.}\PY{n}{rvs}\PY{p}{(}\PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{nu}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{num\PYZus{}samples}\PY{p}{)}\PY{p}{,} \PY{n}{quantiles}\PY{p}{)}
+        \PY{k}{elif} \PY{n}{dist} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{skewt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}  
+            \PY{n}{skew\PYZus{}t\PYZus{}rvs} \PY{o}{=} \PY{n}{SkewStudent}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{simulate}\PY{p}{(}\PY{n}{parameters}\PY{o}{=}\PY{p}{[}\PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{eta}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{lambda}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+            \PY{n}{theoretical\PYZus{}quantiles}  \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{skew\PYZus{}t\PYZus{}rvs}\PY{p}{(}\PY{n}{num\PYZus{}samples}\PY{p}{)}\PY{p}{,} \PY{n}{quantiles}\PY{p}{)}
 
-
-        \PY{k}{elif} \PY{n}{dist} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{skewt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} 
-            \PY{n}{eta} \PY{o}{=} \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{eta}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-            \PY{n}{lambda\PYZus{}param} \PY{o}{=} \PY{n}{params}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{lambda}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}    
-            \PY{n}{skew\PYZus{}t\PYZus{}rvs} \PY{o}{=} \PY{n}{SkewStudent}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{simulate}\PY{p}{(}\PY{n}{parameters}\PY{o}{=}\PY{p}{[}\PY{n}{eta}\PY{p}{,} \PY{n}{lambda\PYZus{}param}\PY{p}{]}\PY{p}{)}
-            \PY{n}{theoretical\PYZus{}quantiles}  \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{skew\PYZus{}t\PYZus{}rvs}\PY{p}{(}\PY{n}{num\PYZus{}samples}\PY{p}{)}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{omega}\PY{p}{)} \PY{o}{+} \PY{n}{mu}\PY{p}{,} \PY{n}{quantiles}\PY{p}{)}
-        
-        \PY{n}{simulated\PYZus{}quantiles} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{simulated\PYZus{}results}\PY{p}{[}\PY{n}{ticker}\PY{p}{]}\PY{p}{,}\PY{n}{quantiles}\PY{p}{)}
-
-        \PY{n}{axes}\PY{p}{[}\PY{n}{tickers}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{red}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-        \PY{n}{axes}\PY{p}{[}\PY{n}{tickers}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{simulated\PYZus{}quantiles}\PY{p}{,}\PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{blue}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{marker} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{c+c1}{\PYZsh{}axes[i].set\PYZus{}aspect(\PYZdq{}equal\PYZdq{})}
-        \PY{n}{axes}\PY{p}{[}\PY{n}{tickers}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{n}{ticker}\PY{p}{)}
-
-    \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+        \PY{n}{simulated\PYZus{}quantiles} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{get\PYZus{}simulated\PYZus{}t}\PY{p}{(}\PY{n}{dist}\PY{p}{)}\PY{p}{,}\PY{n}{quantiles}\PY{p}{)}
+        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{red}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{simulated\PYZus{}quantiles}\PY{p}{,}\PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{blue}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{marker} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}xlim}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
+        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
+        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{n}{ticker}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ \PYZhy{} Dist: }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n}{dist}\PY{p}{)}\PY{p}{)} 
+    \PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-QQ Plots of copula marginal simulated residuals vs normal GARCH Residuals
-    \end{Verbatim}
-
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_40_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-QQ Plots of copula marginal simulated residuals vs t GARCH Residuals
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_40_3.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-QQ Plots of copula marginal simulated residuals vs skewt GARCH Residuals
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_40_5.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_39_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     At least on a marginal level, our copula accurately models the
 standardized residuals from our GARCH models.
 
-We can forecast the one period ahead return as follows:
+    \section{Forecasting}\label{forecasting}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Forecast the conditional volatility of each index using our GARCH
-  models.
-\item
-  Multiply our n-simulated standardized residuals by our conditional
-  volatility forecasts - this gives n raw residual simulations for each
-  index.
-\item
-  Add our mean log-return to each residual forecast - this yields a
-  one-period ahead forecast for each index, following our dependence
-  structure.
-\end{enumerate}
+    \subsection{Forecast One Period
+Return}\label{forecast-one-period-return}
+
+We can forecast the one period ahead return as follows:\\
+1. Forecast the conditional volatility of each index using our GARCH
+models.\\
+2. Multiply our n-simulated standardized residuals by our conditional
+volatility forecasts - this gives n raw residual simulations for each
+index.\\
+3. Add our mean log-return to each residual forecast - this yields a
+one-period ahead forecast for each index, following our dependence
+structure.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{322}{\boxspacing}
+\prompt{In}{incolor}{15}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{forecast\PYZus{}dfs} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
-
 
 \PY{k}{def} \PY{n+nf}{compute\PYZus{}forecast}\PY{p}{(}\PY{n}{dist}\PY{p}{,} \PY{n}{cond\PYZus{}vol\PYZus{}index} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{num\PYZus{}samples} \PY{o}{=} \PY{l+m+mi}{10000}\PY{p}{)}\PY{p}{:}
     \PY{n}{forecasts} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
@@ -1386,85 +1161,84 @@ We can forecast the one period ahead return as follows:
 \PY{n}{strikes} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.01}\PY{p}{,}\PY{l+m+mf}{0.02}\PY{p}{,}\PY{l+m+mf}{0.03}\PY{p}{,}\PY{l+m+mf}{0.04}\PY{p}{,}\PY{l+m+mf}{0.05}\PY{p}{]}
 \PY{n}{simulated\PYZus{}prices} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{index} \PY{o}{=} \PY{n}{strikes}\PY{p}{,} \PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{normal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{t}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{skewt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
 \PY{n}{simulated\PYZus{}prices}\PY{o}{.}\PY{n}{index}\PY{o}{.}\PY{n}{name} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{strike}\PY{l+s+s2}{\PYZdq{}}
-\PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5} \PY{o}{*} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+\PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{3} \PY{o}{*} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}
 
 \PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
-    
     \PY{n}{forecasts} \PY{o}{=} \PY{n}{compute\PYZus{}forecast}\PY{p}{(}\PY{n}{dist}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1} \PY{p}{)}
-   
-    \PY{c+c1}{\PYZsh{}convert to simple returns for computing payoff}
-    \PY{n}{forecast\PYZus{}dfs}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{forecasts}\PY{p}{)}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}
-
-    \PY{n}{strikes} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.01}\PY{p}{,}\PY{l+m+mf}{0.02}\PY{p}{,}\PY{l+m+mf}{0.03}\PY{p}{,}\PY{l+m+mf}{0.04}\PY{p}{,}\PY{l+m+mf}{0.05}\PY{p}{]}
-
+    \PY{n}{forecast\PYZus{}dfs}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{forecasts}\PY{p}{)}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{c+c1}{\PYZsh{}convert to simple returns for computing payoff}
     \PY{c+c1}{\PYZsh{}Compute and plot basket returns}
     \PY{n}{forecast\PYZus{}dfs}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Average}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{=} \PY{n}{forecast\PYZus{}dfs}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)} 
     \PY{n}{axes}\PY{p}{[}\PY{n}{distributions}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{n}{dist}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{forecast\PYZus{}dfs}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Average}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,} \PY{n}{density} \PY{o}{=} \PY{k+kc}{True}\PY{p}{,} \PY{n}{bins} \PY{o}{=} \PY{l+m+mi}{20}\PY{p}{)}
     \PY{n}{axes}\PY{p}{[}\PY{n}{distributions}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{n}{dist}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{n}{dist}\PY{p}{)}
-
     \PY{c+c1}{\PYZsh{}Compute simulated payoffs}
     \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n}{strikes}\PY{p}{:}
         \PY{n}{simulated\PYZus{}prices}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{k}\PY{p}{,}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{maximum}\PY{p}{(}\PY{n}{forecast\PYZus{}dfs}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Average}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{k}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
 
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simulated Mean Returns:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
-    \PY{n+nb}{print}\PY{p}{(}\PY{n}{dist}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{forecast\PYZus{}dfs}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Average}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\PY{n}{display}\PY{p}{(}\PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{[}\PY{n}{forecast\PYZus{}dfs}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Average}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)} \PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{]}\PY{p}{,} \PY{n}{distributions}\PY{p}{,} \PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simulated Mean Returns:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
 
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simulated Mean Option Payoffs:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{n}{simulated\PYZus{}prices}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simulated Mean Option Payoffs:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{end} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{display}\PY{p}{(}\PY{n}{simulated\PYZus{}prices}\PY{p}{)}
 
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Simulated Density of Simple Returns:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simulated Density of Simple Returns:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
+    
     \begin{Verbatim}[commandchars=\\\{\}]
-Simulated Mean Returns:
-normal   0.007806308290388148
-t        0.009206141063391031
-skewt    0.007200887584390559
-Simulated Mean Option Payoffs:
-          normal         t     skewt
-strike
-0.01    0.011707   0.01324  0.010456
-0.02    0.007687  0.009054  0.006242
-0.03     0.00483   0.00599  0.003398
-0.04    0.002912  0.003846  0.001686
-0.05    0.001694  0.002412  0.000782
+        Simulated Mean Returns:
+normal                 0.007969
+t                      0.008981
+skewt                  0.007052
+    \end{Verbatim}
 
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Simulated Mean Option Payoffs:
+    \end{Verbatim}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+          normal         t     skewt
+strike                              
+0.01    0.011895  0.013408  0.010567
+0.02    0.007815  0.009205  0.006386
+0.03    0.004868  0.006115  0.003539
+0.04    0.002888  0.003954  0.001823
+0.05    0.001623  0.002502  0.000885
+    \end{Verbatim}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
 Simulated Density of Simple Returns:
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_42_1.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_43_4.png}
     \end{center}
     { \hspace*{\fill} \\}
     
-    \paragraph{Historical Payoffs}\label{historical-payoffs}
+    \subsection{Historical Payoffs}\label{historical-payoffs}
 
 Here we compute the historical payoff of our basket option, for various
 strikes, at each month in our dataset.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{323}{\boxspacing}
+\prompt{In}{incolor}{17}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{n}{tickers}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}
 
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Empirical Average Simple Return:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n+nb}{str}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n}{strikes}\PY{p}{:} \PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Basket Payoff, strike:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{k}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{maximum}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{k}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}
 
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Emperical Average Simple Return:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n+nb}{str}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
-\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n}{strikes}\PY{p}{:}
-    \PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Basket Payoff, strike:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{k}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{maximum}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{k}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}
-
-\PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n}{strikes}\PY{p}{:}
-    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Strike:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{k}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Payoff:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Basket Payoff, strike:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{k}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-
+\PY{n}{display}\PY{p}{(}\PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{[}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Basket Payoff, strike:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{k}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)} \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n}{strikes}\PY{p}{]}\PY{p}{,}\PY{n}{index}\PY{o}{=}\PY{n}{pd}\PY{o}{.}\PY{n}{Index}\PY{p}{(}\PY{n}{strikes}\PY{p}{,}\PY{n}{name} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Strike}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,} \PY{n}{columns} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Historical Avg. Payoff}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
 
 \PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5} \PY{o}{*} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
 
 \PY{n}{axes}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}
 \PY{n}{axes}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Monthly Simple Average Returns}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{axes}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,} \PY{n}{density}  \PY{o}{=} \PY{k+kc}{True}\PY{p}{)}
-\PY{n}{axes}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Emperical Density of Monthly Average Returns}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{axes}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Empirical Density of Monthly Average Returns}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 
 \PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{strikes}\PY{p}{)}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5}\PY{o}{*} \PY{n+nb}{len}\PY{p}{(}\PY{n}{strikes}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{10} \PY{p}{)}\PY{p}{)}
@@ -1472,30 +1246,39 @@ strikes, at each month in our dataset.
 \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{strikes}\PY{p}{)}\PY{p}{)}\PY{p}{:}
     \PY{n}{k} \PY{o}{=} \PY{n}{strikes}\PY{p}{[}\PY{n}{i}\PY{p}{]}
     \PY{n}{axes}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{maximum}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{k}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{)}
+    \PY{n}{axes}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Option Payoff \PYZhy{} Strike: }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{k}\PY{p}{)}\PY{p}{)}
     \PY{n}{axes}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{hist}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{maximum}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{k}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n}{density} \PY{o}{=} \PY{k+kc}{True}\PY{p}{)}
+    \PY{n}{axes}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Density of Payoffs\PYZhy{} Strike: }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{k}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-Emperical Average Simple Return: 0.006018745426154646
-Strike: 0.01 Payoff: 0.01343324878084908
-Strike: 0.02 Payoff: 0.008963616389594812
-Strike: 0.03 Payoff: 0.005610366763297805
-Strike: 0.04 Payoff: 0.003311825946792608
-Strike: 0.05 Payoff: 0.0018801396256648635
+Empirical Average Simple Return: 0.006013059812587044
     \end{Verbatim}
 
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+        Historical Avg. Payoff
+Strike                        
+0.01                  0.013428
+0.02                  0.008964
+0.03                  0.005610
+0.04                  0.003312
+0.05                  0.001880
+    \end{Verbatim}
+
+    
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_44_1.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_45_2.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_44_2.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_45_3.png}
     \end{center}
     { \hspace*{\fill} \\}
     
-    \subparagraph{Conduct Historical
+    \subsection{Conduct Historical
 Simulation}\label{conduct-historical-simulation}
 
 Next, we compute the conditional volatility of our log returns. We then
@@ -1506,17 +1289,18 @@ historical payoffs (blue). The shaded region represents the upper and
 lower 5\% quantiles of our forecasted basket returns.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{349}{\boxspacing}
+\prompt{In}{incolor}{18}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{forecasts} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
 \PY{n}{forecasted\PYZus{}avg\PYZus{}return} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
 \PY{n}{forecasted\PYZus{}95p} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
 \PY{n}{forecasted\PYZus{}5p} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
-\PY{n}{error} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
 
 \PY{n}{timesteps} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}
+\PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5} \PY{o}{*} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
 
-\PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
+\PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{distributions}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+    \PY{n}{dist} \PY{o}{=} \PY{n}{distributions}\PY{p}{[}\PY{n}{j}\PY{p}{]}
     \PY{n}{forecasts}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{p}{[}\PY{p}{]}
     \PY{n}{forecasted\PYZus{}avg\PYZus{}return}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{timesteps}\PY{p}{)}
     \PY{n}{forecasted\PYZus{}95p}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{empty}\PY{p}{(}\PY{n}{timesteps}\PY{p}{)}
@@ -1535,61 +1319,35 @@ lower 5\% quantiles of our forecasted basket returns.
     \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Within Bounds: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{end}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}    
     \PY{n+nb}{print}\PY{p}{(}\PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{percent\PYZus{}outside\PYZus{}bounds}\PY{p}{)}
     \PY{k}{if} \PY{n}{percent\PYZus{}outside\PYZus{}bounds} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{:}
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Exceptions:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-        \PY{n+nb}{print}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{index}\PY{p}{[}\PY{n}{outside\PYZus{}upper\PYZus{}bounds}\PY{p}{]}\PY{p}{)}
-        \PY{n+nb}{print}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{index}\PY{p}{[}\PY{n}{outside\PYZus{}lower\PYZus{}bounds}\PY{p}{]}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Above Bounds:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{index}\PY{p}{[}\PY{n}{outside\PYZus{}upper\PYZus{}bounds}\PY{p}{]}\PY{o}{.}\PY{n}{date}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{str}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Below Bounds:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{index}\PY{p}{[}\PY{n}{outside\PYZus{}lower\PYZus{}bounds}\PY{p}{]}\PY{o}{.}\PY{n}{date}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{str}\PY{p}{)}\PY{p}{)}\PY{p}{)}
 
-
-    \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{index}\PY{p}{,}\PY{n}{forecasted\PYZus{}avg\PYZus{}return}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{red}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-    \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{index}\PY{p}{,}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}
-    \PY{n}{plt}\PY{o}{.}\PY{n}{fill\PYZus{}between}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{index}\PY{p}{,}\PY{n}{forecasted\PYZus{}5p}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{,}\PY{n}{forecasted\PYZus{}95p}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{,}\PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{gray}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{alpha} \PY{o}{=} \PY{l+m+mf}{0.5}\PY{p}{)}
-    \PY{n}{plt}\PY{o}{.}\PY{n}{ylim}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.2}\PY{p}{,}\PY{l+m+mf}{0.25}\PY{p}{)}
-    \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{n}{dist}\PY{p}{)}
-    \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+    \PY{n}{axes}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{index}\PY{p}{,}\PY{n}{forecasted\PYZus{}avg\PYZus{}return}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{red}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{n}{axes}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{index}\PY{p}{,}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}
+    \PY{n}{axes}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{fill\PYZus{}between}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Simple Average Return}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{index}\PY{p}{,}\PY{n}{forecasted\PYZus{}5p}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{,}\PY{n}{forecasted\PYZus{}95p}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{,}\PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{gray}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{alpha} \PY{o}{=} \PY{l+m+mf}{0.5}\PY{p}{)}
+    \PY{n}{axes}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.2}\PY{p}{,}\PY{l+m+mf}{0.25}\PY{p}{)}
+    \PY{n}{axes}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{n}{dist}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-Within Bounds: 0.974025974025974
-Exceptions:
-DatetimeIndex(['2020-11-30'], dtype='datetime64[ns]', name='Date', freq='ME')
-DatetimeIndex(['1998-08-31', '2001-09-30', '2002-09-30', '2008-01-31',
-               '2008-09-30', '2008-10-31', '2011-08-31', '2020-02-29',
-               '2020-03-31'],
-              dtype='datetime64[ns]', name='Date', freq=None)
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_46_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
+Within Bounds: 0.9714285714285714
+Above Bounds: ['2020-11-30']
+Below Bounds: ['1998-08-31' '2001-09-30' '2002-09-30' '2008-01-31' '2008-09-30'
+ '2008-10-31' '2011-08-31' '2020-02-29' '2020-03-31' '2022-06-30']
 Within Bounds: 0.9818181818181818
-Exceptions:
-DatetimeIndex([], dtype='datetime64[ns]', name='Date', freq='ME')
-DatetimeIndex(['1998-08-31', '2008-01-31', '2008-09-30', '2008-10-31',
-               '2011-08-31', '2020-02-29', '2020-03-31'],
-              dtype='datetime64[ns]', name='Date', freq=None)
-    \end{Verbatim}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_46_3.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
+Above Bounds: []
+Below Bounds: ['1998-08-31' '2008-01-31' '2008-09-30' '2008-10-31' '2011-08-31'
+ '2020-02-29' '2020-03-31']
 Within Bounds: 0.9766233766233766
-Exceptions:
-DatetimeIndex(['1999-12-31', '2020-11-30'], dtype='datetime64[ns]', name='Date',
-freq=None)
-DatetimeIndex(['1998-08-31', '2008-01-31', '2008-09-30', '2008-10-31',
-               '2011-08-31', '2020-02-29', '2020-03-31'],
-              dtype='datetime64[ns]', name='Date', freq=None)
+Above Bounds: ['1999-12-31' '2020-11-30']
+Below Bounds: ['1998-08-31' '2008-01-31' '2008-09-30' '2008-10-31' '2011-08-31'
+ '2020-02-29' '2020-03-31']
     \end{Verbatim}
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_46_5.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_47_1.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -1601,123 +1359,227 @@ mean only slightly, unlike real returns.
 
 However, by excluding the upper and lower 5\% quantiles, we can create
 bounds on our return data, allowing us to forecast, with some
-confidence, the more extreme scenarios. Caution should be excercised
+confidence, the more extreme scenarios. Caution should be exercised
 here: our model was not able to predict the start of some of the most
 extreme shocks, including the 1998 Russian Financial Crisis (August,
 1998), the 2008 Global Financial Crisis (September, 2008), and the
 COVID-19 pandemic (February, 2020)
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{360}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{}jupyter nbconvert \PYZhy{}\PYZhy{}to pdf \PYZdq{}program.ipynb\PYZdq{}}
-\end{Verbatim}
-\end{tcolorbox}
+    \section{Case Study: Covered Call
+Strategy}\label{case-study-covered-call-strategy}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-\^{}C
-    \end{Verbatim}
+    Finally, we analyze the performance of a covered call strategy, using
+the simulated prices and real return data. We begin with \$1, split
+equally between our 6 indices. We will sell one basket option per dollar
+in our portfolio, with a fixed strike. The proceeds from the option will
+be invested at the historical treasury yield. We rebalance at the end of
+each month. We repeat for several strikes.
 
-    \section{Maha stuffWe will conduct a goodness of fit test using the
-squared Mahalanobis
-distance.}\label{maha-stuffwe-will-conduct-a-goodness-of-fit-test-using-the-squared-mahalanobis-distance.}
-
-    Note that if \[t=\begin{pmatrix}
-t_1 \\
-t_2 \\
-t_3 \\
-\vdots \\
-t_d
-\end{pmatrix}
-\sim t_{\nu} (\mu,\Sigma)\] Then we can write
-\[t = \mu + \sqrt{\frac{\nu}{W}} X\] Where
-\(X\sim N_d(0,\Sigma), W \sim \chi^2_\nu,\) and \(W\) \& \(Z\) are
-independent. Recall that the squared Mahalanobis distance for a variable
-t is given by: \[D^2 = (t-\mu)^\top \Sigma^{-1}(t-\mu)\]
-
-Substituting \(t = \mu + \sqrt{\frac{\nu}{W}} Z\) for \(X\), we get
-\[D^2 = \left(\sqrt{\frac{\nu}{W}}Z\right)^\top \Sigma^{-1}\left(\sqrt{\frac{\nu}{W}}Z\right)= \frac{\nu}{W} Z^\top \Sigma^{-1} Z\]
-
-Now, since \(Z\sim N_d(0,\Sigma)\), we have that
-\[Z^\top \Sigma^{-1} Z\sim \chi^2_d\] We can let
-\(U= Z^\top \Sigma^{-1} Z\sim \chi^2_d\) so that
-\[D^2 = \frac{\nu}{W}U = p\frac{(U/p)}{(W/\nu)}\]
-
-Then, \[\frac{D^2}{p} =\frac{(U/p)}{(W/\nu)} \sim F(p,\nu)\]
-
-    The above QQ Plots show that our Multivariate T distribution closely
-fits the standaridized residuals, especically when our residuals come
-from the Student's-t, and skewed Student's-t GARCH models.
+Here, it would be necessary to discount our option prices by the
+historical treasury rate. However, since we are also investing the
+proceeds from selling the option at the treasury rate, we can skip
+discounting in the first place.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{326}{\boxspacing}
+\prompt{In}{incolor}{20}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{k}{def} \PY{n+nf}{Squared\PYZus{}Mahalanobis\PYZus{}distance}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{sigma\PYZus{}inv}\PY{p}{,}\PY{n}{mu}\PY{p}{)}\PY{p}{:}
-    \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{dot}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{n}{mu}\PY{p}{)}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{dot}\PY{p}{(}\PY{n}{sigma\PYZus{}inv}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{n}{mu}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n}{avg\PYZus{}return} \PY{o}{=} \PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{n}{tickers}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+\PY{n}{portfolio\PYZus{}value} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+\PY{n}{strikes} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{0.01}\PY{p}{,}\PY{l+m+mf}{0.02}\PY{p}{,}\PY{l+m+mf}{0.03}\PY{p}{,}\PY{l+m+mf}{0.04}\PY{p}{,}\PY{l+m+mf}{0.05}\PY{p}{]}
 
-\PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
 \PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
+    \PY{n}{portfolio\PYZus{}value}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{strikes}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
 
-    \PY{n}{f\PYZus{}samples} \PY{o}{=} \PY{n}{f}\PY{o}{.}\PY{n}{rvs}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)}\PY{p}{,}\PY{n}{fitted\PYZus{}df}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{,}\PY{n}{size} \PY{o}{=} \PY{l+m+mi}{10000}\PY{p}{)}
-    \PY{n}{scale\PYZus{}inv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{inv}\PY{p}{(}\PY{n}{spearman\PYZus{}cov}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{)}
+    \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+        \PY{n}{forecasts} \PY{o}{=} \PY{n}{compute\PYZus{}forecast}\PY{p}{(}\PY{n}{dist}\PY{p}{,}\PY{n}{i} \PY{p}{)}
+        \PY{n}{forecast\PYZus{}dfs}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{forecasts}\PY{p}{)}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{c+c1}{\PYZsh{}convert to simple returns for computing payoff}
+        \PY{c+c1}{\PYZsh{}Estimate basket returns}
+        \PY{n}{forecast\PYZus{}dfs}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Average}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{=} \PY{n}{forecast\PYZus{}dfs}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)} 
 
-    \PY{n}{mu} \PY{o}{=} \PY{p}{[}\PY{n}{fitted\PYZus{}models}\PY{p}{[}\PY{p}{(}\PY{n}{ticker}\PY{p}{,}\PY{n}{dist}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{params}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{mu}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{k}{for} \PY{n}{ticker} \PY{o+ow}{in} \PY{n}{tickers}\PY{p}{]}
-    \PY{n}{D\PYZus{}squared\PYZus{}over\PYZus{}p} \PY{o}{=} \PY{p}{[}\PY{n}{Squared\PYZus{}Mahalanobis\PYZus{}distance}\PY{p}{(}\PY{n}{row}\PY{p}{,}\PY{n}{scale\PYZus{}inv}\PY{p}{,}\PY{n}{mu}\PY{p}{)}\PY{o}{/} \PY{n+nb}{len}\PY{p}{(}\PY{n}{tickers}\PY{p}{)} \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{merged\PYZus{}residuals}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{o}{.}\PY{n}{T}\PY{p}{]} 
+        \PY{n}{cur\PYZus{}value} \PY{o}{=} \PY{n}{portfolio\PYZus{}value}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+        \PY{n}{new\PYZus{}value} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{strikes}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
+
+        \PY{c+c1}{\PYZsh{}Compute simulated payoffs}
+        \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{strikes}\PY{p}{)}\PY{p}{)}\PY{p}{:} 
+            \PY{n}{k} \PY{o}{=} \PY{n}{strikes}\PY{p}{[}\PY{n}{j}\PY{p}{]}
+            \PY{n}{simulated\PYZus{}prices}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{k}\PY{p}{,}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{maximum}\PY{p}{(}\PY{n}{forecast\PYZus{}dfs}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Average}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{k}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+            \PY{k}{if} \PY{n}{avg\PYZus{}return}\PY{o}{.}\PY{n}{iloc}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{\PYZgt{}} \PY{n}{k}\PY{p}{:}
+                \PY{n}{new\PYZus{}value}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{cur\PYZus{}value}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1} \PY{o}{+} \PY{n}{k}\PY{p}{)} \PY{o}{+} \PY{n}{simulated\PYZus{}prices}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{k}\PY{p}{,}\PY{n}{dist}\PY{p}{]}\PY{o}{*}\PY{n}{cur\PYZus{}value}\PY{p}{[}\PY{n}{j}\PY{p}{]}
+            \PY{k}{else}\PY{p}{:}
+                \PY{n}{new\PYZus{}value}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{cur\PYZus{}value}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{n}{avg\PYZus{}return}\PY{o}{.}\PY{n}{iloc}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)} \PY{o}{+} \PY{n}{simulated\PYZus{}prices}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{k}\PY{p}{,}\PY{n}{dist}\PY{p}{]}\PY{o}{*}\PY{n}{cur\PYZus{}value}\PY{p}{[}\PY{n}{j}\PY{p}{]}
+        \PY{n}{portfolio\PYZus{}value}\PY{p}{[}\PY{n}{dist}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{portfolio\PYZus{}value}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{,}\PY{n}{new\PYZus{}value}\PY{p}{,}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)} 
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{21}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{strikes}\PY{p}{)}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5} \PY{o}{*} \PY{n+nb}{len}\PY{p}{(}\PY{n}{strikes}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{distributions}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+    \PY{n}{dist} \PY{o}{=} \PY{n}{distributions}\PY{p}{[}\PY{n}{i}\PY{p}{]}
+    \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{strikes}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+        \PY{n}{strike} \PY{o}{=} \PY{n}{strikes}\PY{p}{[}\PY{n}{j}\PY{p}{]}
+        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{n}{tickers}\PY{p}{]}\PY{o}{.}\PY{n}{index}\PY{p}{,}\PY{n}{portfolio\PYZus{}value}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{)}
+        \PY{n}{axes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Portfolio Growth \PYZhy{} GARCH dist: }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n}{dist}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ \PYZhy{} Strike: }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{strike}\PY{p}{)}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{program_files/program_52_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
     
-    \PY{n}{n} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{D\PYZus{}squared\PYZus{}over\PYZus{}p}\PY{p}{)}
-    \PY{n}{quantiles} \PY{o}{=} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{n} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.5}\PY{p}{)} \PY{o}{/} \PY{n}{n}
+    From the above graphs, it is clear that this strategy is worth analyzing
+more. Let us conclude by analysing the monthly returns, and comparing to
+that of our underlying indices.
 
-    
-    \PY{n}{theoretical\PYZus{}quantiles}  \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{f\PYZus{}samples}\PY{p}{,} \PY{n}{quantiles}\PY{p}{)}
-    \PY{n}{sample\PYZus{}quantiles} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n+nb}{sorted}\PY{p}{(}\PY{n}{D\PYZus{}squared\PYZus{}over\PYZus{}p}\PY{p}{)}\PY{p}{,}\PY{n}{quantiles}\PY{p}{)}
-     
-    \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{sample\PYZus{}quantiles}\PY{p}{,}\PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{blue}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{marker} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-    \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{theoretical\PYZus{}quantiles}\PY{p}{,}\PY{n}{color} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{red}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-    \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{QQ Plot for Scaled Squared Mahalanobis Distance vs F(d,nu) \PYZhy{} underlying GARCH: }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n}{dist}\PY{p}{)}
-    \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{59}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{portfolio\PYZus{}returns} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+
+\PY{k}{for} \PY{n}{dist} \PY{o+ow}{in} \PY{n}{distributions}\PY{p}{:}
+    \PY{n}{values}  \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{portfolio\PYZus{}value}\PY{p}{[}\PY{n}{dist}\PY{p}{]}\PY{o}{.}\PY{n}{T}\PY{p}{,}\PY{n}{index} \PY{o}{=} \PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{n}{tickers}\PY{p}{]}\PY{o}{.}\PY{n}{index}\PY{p}{,} \PY{n}{columns} \PY{o}{=} \PY{n}{strikes}\PY{p}{)}
+    \PY{n}{returns} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{values}\PY{o}{.}\PY{n}{pct\PYZus{}change}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{n}{index} \PY{o}{=} \PY{n}{merged\PYZus{}data}\PY{p}{[}\PY{n}{tickers}\PY{p}{]}\PY{o}{.}\PY{n}{index}\PY{p}{,}\PY{n}{columns} \PY{o}{=} \PY{n}{strikes}\PY{p}{)}
+    \PY{n}{returns} \PY{o}{=} \PY{n}{returns}\PY{o}{.}\PY{n}{dropna}\PY{p}{(}\PY{p}{)}
+
+    \PY{n}{results\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{index} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mu}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{VaR95}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ES95}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{columns} \PY{o}{=} \PY{n}{strikes}\PY{p}{)}
+    \PY{n}{results\PYZus{}df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{benchmark}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{avg\PYZus{}return}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}\PY{p}{,}
+                                        \PY{n}{avg\PYZus{}return}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{p}{)}\PY{p}{,}
+                                    \PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{avg\PYZus{}return}\PY{p}{,}\PY{l+m+mf}{0.05}\PY{p}{)}\PY{p}{,} 
+                                    \PY{n}{avg\PYZus{}return}\PY{p}{[}\PY{n}{avg\PYZus{}return}\PY{o}{\PYZlt{}}\PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{avg\PYZus{}return}\PY{p}{,}\PY{l+m+mf}{0.05}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}\PY{p}{]}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+
+    \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{n}{strikes}\PY{p}{:}
+        \PY{n}{results\PYZus{}df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mu}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{k}\PY{p}{]} \PY{o}{=} \PY{n+nb}{round}\PY{p}{(}\PY{n}{returns}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+        \PY{n}{results\PYZus{}df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sigma}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{k}\PY{p}{]} \PY{o}{=} \PY{n+nb}{round}\PY{p}{(}\PY{n}{returns}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+        \PY{n}{results\PYZus{}df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{VaR95}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{k}\PY{p}{]} \PY{o}{=} \PY{n+nb}{round}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{quantile}\PY{p}{(}\PY{n}{returns}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{p}{,} \PY{l+m+mf}{0.05}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+        \PY{n}{results\PYZus{}df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ES95}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{k}\PY{p}{]} \PY{o}{=} \PY{n+nb}{round}\PY{p}{(}\PY{n}{returns}\PY{p}{[}\PY{n}{returns}\PY{p}{[}\PY{n}{k}\PY{p}{]} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{results\PYZus{}df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{VaR95}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{k}\PY{p}{]}\PY{p}{]}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+        \PY{n}{t\PYZus{}stat}\PY{p}{,} \PY{n}{p\PYZus{}value} \PY{o}{=} \PY{n}{ttest\PYZus{}ind}\PY{p}{(}\PY{n}{returns}\PY{p}{[}\PY{n}{k}\PY{p}{]}\PY{p}{,} \PY{n}{avg\PYZus{}return}\PY{p}{)}
+        \PY{n}{results\PYZus{}df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{p\PYZhy{}value}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{k}\PY{p}{]} \PY{o}{=} \PY{n+nb}{round}\PY{p}{(}\PY{n}{p\PYZus{}value}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)} \PY{k}{if} \PY{n}{t\PYZus{}stat} \PY{o}{\PYZgt{}}\PY{l+m+mi}{0}  \PY{k}{else} \PY{l+m+mi}{1}
+    \PY{n}{results\PYZus{}df} \PY{o}{=} \PY{n}{results\PYZus{}df}\PY{o}{.}\PY{n}{round}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}
+
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{GARCH Dist:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{dist}\PY{p}{)}
+
+    \PY{n}{display}\PY{p}{(}\PY{n}{results\PYZus{}df}\PY{p}{)}  
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-
+GARCH Dist: normal
     \end{Verbatim}
 
-    \begin{Verbatim}[commandchars=\\\{\}, frame=single, framerule=2mm, rulecolor=\color{outerrorbackground}]
-\textcolor{ansi-red-intense}{\textbf{---------------------------------------------------------------------------}}
-\textcolor{ansi-red-intense}{\textbf{KeyError}}                                  Traceback (most recent call last)
-Cell \textcolor{ansi-green-intense}{\textbf{In[326], line 10}}
-\textcolor{ansi-green}{      7} f\_samples \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{98,98,98}}{=} f\def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{98,98,98}}{.}rvs(\def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{0,135,0}}{len}(tickers),fitted\_df[dist],size \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{98,98,98}}{=} \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{98,98,98}}{10000})
-\textcolor{ansi-green}{      8} scale\_inv \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{98,98,98}}{=} np\def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{98,98,98}}{.}linalg\def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{98,98,98}}{.}inv(spearman\_cov[dist])
-\textcolor{ansi-green-intense}{\textbf{---> 10}} mu \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{98,98,98}}{=} [\setlength{\fboxsep}{0pt}\colorbox{ansi-yellow}{fitted\_models\strut}\setlength{\fboxsep}{0pt}\colorbox{ansi-yellow}{[\strut}\setlength{\fboxsep}{0pt}\colorbox{ansi-yellow}{(\strut}\setlength{\fboxsep}{0pt}\colorbox{ansi-yellow}{ticker\strut}\setlength{\fboxsep}{0pt}\colorbox{ansi-yellow}{,\strut}\setlength{\fboxsep}{0pt}\colorbox{ansi-yellow}{dist\strut}\setlength{\fboxsep}{0pt}\colorbox{ansi-yellow}{)\strut}\setlength{\fboxsep}{0pt}\colorbox{ansi-yellow}{]\strut}\def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{98,98,98}}{.}params[\def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{175,0,0}}{"}\def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{175,0,0}}{mu}\def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{175,0,0}}{"}] \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{0,135,0}}{\textbf{for}} ticker \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{175,0,255}}{\textbf{in}} tickers]
-\textcolor{ansi-green}{     11} D\_squared\_over\_p \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{98,98,98}}{=} [Squared\_Mahalanobis\_distance(row,scale\_inv,mu)\def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{98,98,98}}{/} \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{0,135,0}}{len}(tickers) \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{0,135,0}}{\textbf{for}} row \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{175,0,255}}{\textbf{in}} merged\_residuals[dist]\def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{98,98,98}}{.}T] 
-\textcolor{ansi-green}{     13} n \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{98,98,98}}{=} \def\tcRGB{\textcolor[RGB]}\expandafter\tcRGB\expandafter{\detokenize{0,135,0}}{len}(D\_squared\_over\_p)
-
-\textcolor{ansi-red-intense}{\textbf{KeyError}}: ('\^{}GDAXI', 'normal')
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+             0.0     0.01     0.02     0.03     0.04     0.05  benchmark
+mu       0.00615  0.00644  0.00656  0.00656  0.00634  0.00594    0.00481
+sigma    0.02779  0.03091  0.03387  0.03651  0.03863  0.04012    0.04173
+VaR95   -0.05365 -0.05921 -0.06351 -0.06672  -0.0692 -0.07092   -0.07294
+ES95    -0.08627 -0.09201 -0.09671 -0.10041 -0.10325 -0.10536   -0.10420
+p-value   0.2999  0.26885  0.26098   0.2679  0.29805  0.35096        NaN
     \end{Verbatim}
 
-    \subsubsection{References}\label{references}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+GARCH Dist: t
+    \end{Verbatim}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+             0.0     0.01     0.02     0.03     0.04     0.05  benchmark
+mu       0.00878  0.00897  0.00893  0.00873  0.00829  0.00764    0.00481
+sigma    0.02773  0.03084  0.03379  0.03642  0.03855  0.04004    0.04173
+VaR95   -0.05145 -0.05718 -0.06164 -0.06495 -0.06728 -0.06904   -0.07294
+ES95    -0.08324 -0.08906 -0.09389 -0.09778 -0.10082 -0.10316   -0.10420
+p-value  0.06033  0.05822  0.06611  0.08258  0.11477  0.16839        NaN
+    \end{Verbatim}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+GARCH Dist: skewt
+    \end{Verbatim}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+             0.0     0.01     0.02     0.03     0.04     0.05  benchmark
+mu       0.00517  0.00518  0.00511  0.00505  0.00494  0.00474    0.00481
+sigma    0.02791  0.03105    0.034  0.03664  0.03875  0.04022    0.04173
+VaR95    -0.0547 -0.06059   -0.065 -0.06813 -0.07052 -0.07204   -0.07294
+ES95    -0.08765 -0.09374 -0.09869 -0.10247 -0.10523 -0.10711   -0.10420
+p-value  0.44357  0.44395  0.45672  0.46581  0.48166        1        NaN
+    \end{Verbatim}
+
+    
+    \subsection{Conclusion}\label{conclusion}
+
+    Regardless of the distribution chosen for our GARCH residuals, we
+observed low heteroskedatics effects in our timeseries. We found that
+GARCH(1,1) model worked best for all choices of distribution, with a
+skewed Student's-t distribution offering the best fit. We found that a
+Student's-t copula could be closely fitted to the GARCH residuals,
+allowing us to conduct correlated multivariate volatility forecasts.
+While these forecasts are not a good indicator of future returns, they
+were still useful in pricing our basket options. Our basket options
+closely reflected the real world average payoffs. We found that a
+covered call strategy, with strike return less than or equal to 3\%,
+offered us a greater return than investing equally in the underlying
+indices alone, with a lesser volatility, value at risk and expected
+shortfall. However, these last conclusions were not statistically
+significant.
+
+    \section{References}\label{references}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
-  https://users.ssc.wisc.edu/\textasciitilde bhansen/papers/ier\_94.pdf
-  skewed students t
-\end{enumerate}
-
-https://onlinelibrary-wiley-com.libproxy.wlu.ca/doi/pdf/10.1002/9781118673331
-reference
-
-ifm https://open.library.ubc.ca/media/stream/pdf/52383/1.0225985/5
-
-arch
-https://arch.readthedocs.io/en/latest/univariate/generated/arch.univariate.SkewStudent.html
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
+  \textbf{Aroussi, R. (n.d.).} Yfinance. PyPI.
+  \url{https://pypi.org/project/yfinance/}
 \item
-  Author, \emph{Title of the Book/Article}, Publisher, Year.
+  \textbf{Astanin, S. (n.d.).} Tabulate. PyPI.
+  \url{https://pypi.org/project/tabulate/}
+\item
+  \textbf{Cherubini, U., Luciano, E., \& Vecchiato, W. (2004).} Copula
+  Methods in Finance. \url{https://doi.org/10.1002/9781118673331}
+\item
+  \textbf{Hansen, B. E. (1994).} Autoregressive conditional density
+  estimation. \emph{International Economic Review, 35}(3), 705.
+  \url{https://doi.org/10.2307/2527081}
+\item
+  \textbf{Harris, C. R., Millman, K. J., van der Walt, S. J., Gommers,
+  R., Virtanen, P., Cournapeau, D., Wieser, E., Taylor, J., Berg, S.,
+  Smith, N. J., Kern, R., Picus, M., Hoyer, S., van Kerkwijk, M. H.,
+  Brett, M., Haldane, A., del Río, J. F., Wiebe, M., Peterson, P.,
+  \ldots{} Oliphant, T. E. (2020).} Array programming with NumPy.
+  \emph{Nature, 585}(7825), 357--362.
+  \url{https://doi.org/10.1038/s41586-020-2649-2}
+\item
+  \textbf{Hunter, J. D. (2007).} Matplotlib: A 2D graphics environment.
+  \emph{Computing in Science \& Engineering, 9}(3), 90--95.
+  \url{https://doi.org/10.1109/mcse.2007.55}
+\item
+  \textbf{The pandas development team. (2024, April 10).}
+  Pandas-dev/Pandas: Pandas. Zenodo.
+  \url{https://zenodo.org/records/10957263}
+\item
+  \textbf{Seabold, S., \& Perktold, J. (2010).} Statsmodels: Econometric
+  and statistical modeling with python. \emph{Proceedings of the Python
+  in Science Conference}, 92--96.
+  \url{https://doi.org/10.25080/majora-92bf1922-011}
+\item
+  \textbf{Sheppard, K., Khrapov, S., Lipták, G., Mikedeltalima,
+  Capellini, R., Alejandro-Cermeno, Hugle, Esvhd, bot, S., Fortin, A.,
+  Jpn, Judell, M., Russell, R., Li, W., 645775992, Adams, A.,
+  Jbrockmendel, Migrator, L., Rabba, M., \ldots{} Çelik, B. (2023,
+  September 26).} Bashtage/Arch: Release 6.1.0. Zenodo.
+  \url{https://zenodo.org/record/7975104}
+\item
+  \textbf{Virtanen, P., Gommers, R., Oliphant, T. E., Haberland, M.,
+  Reddy, T., Cournapeau, D., Burovski, E., Peterson, P., Weckesser, W.,
+  Bright, J., van der Walt, S. J., Brett, M., Wilson, J., Millman, K.
+  J., Mayorov, N., Nelson, A. R., Jones, E., Kern, R., Larson, E.,
+  \ldots{} Vázquez-Baeza, Y. (2020).} SciPy 1.0: Fundamental algorithms
+  for scientific computing in python. \emph{Nature Methods, 17}(3),
+  261--272. \url{https://doi.org/10.1038/s41592-019-0686-2}
 \end{enumerate}
 
 
