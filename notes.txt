@@ -1,5 +1,0 @@
- finish simulation with copula
-
- fit mvt dist to residuals like before, simulate
- 
- fit mvt dist to returns directly, simulate

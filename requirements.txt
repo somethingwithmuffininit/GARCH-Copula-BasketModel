@@ -5,3 +5,5 @@ pandas
 matplotlib
 arch
 openpyxl
+tabulate
+scipy
